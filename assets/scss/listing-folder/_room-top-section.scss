@@ -1,0 +1,198 @@
+.room-top-section {
+    position: relative;
+    .featured-img {
+        position: relative;
+        width: 100%;
+        height: 570px;
+
+        img {
+            @include centered;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .kodelisting-gallery-view-all {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        z-index: 9;
+
+        .button {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 10px 15px 10px 30px;
+            @include fontsize(13);
+
+            &:before {
+                @include centered-vertical;
+                left: 12px;
+                font-family: 'linearicons-free';
+                content: "\e86f";
+                font-size: 13px;
+                line-height: 1;
+            }
+        }
+    }
+}
+
+
+.kodelisting-image-gallery {
+    img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        transition: transform 0.3s;
+    }
+    
+    &.gap-0 {
+        --gallery-gap: 0px;
+    }
+    
+    &.gap-2 {
+        --gallery-gap: 2px;
+    }
+    
+    &.gap-5 {
+        --gallery-gap: 5px;
+    }
+    
+    &.gap-10 {
+        --gallery-gap: 10px;
+    }
+    
+    &.gap-16 {
+        --gallery-gap: 16px;
+    }
+    
+    &.gap-20 {
+        --gallery-gap: 20px;
+    }
+    
+    &.gap-32 {
+        --gallery-gap: 32px;
+    }
+    
+    .kodelisting-gallery-item {
+        position: relative;
+    }
+    
+    &.gallery-grid {
+        .kodelisting-gallery-wrap {
+            @include flex;
+            @include flexWrap;
+            margin: calc(0px - var(--gallery-gap));
+        }
+        
+        .kodelisting-gallery-item {
+            padding: var(--gallery-gap);
+        }
+        
+        &.grid-col-2 .kodelisting-gallery-item {
+            width: 50%;
+        }
+        
+        &.grid-col-3 .kodelisting-gallery-item {
+            width: 33.33%;
+        }
+        
+        &.grid-col-4 .kodelisting-gallery-item {
+            width: 25%;
+        }
+        
+        &.grid-col-5 .kodelisting-gallery-item {
+            width: 20%;
+        }
+        
+        &.grid-col-6 .kodelisting-gallery-item {
+            width: 16.6666%;
+        }
+        
+        &.align-middle-v {
+            .kodelisting-gallery-item {
+                @include flex;
+                @include flexCenter;
+            }
+        }
+        
+        &.align-bottom-v {
+            .kodelisting-gallery-item {
+                @include flex;
+                @include flexVEnd;
+            }
+        }
+    }
+
+    &.gallery-mosaic {
+        .kodelisting-gallery-wrap {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+
+            .kodelisting-gallery-item:first-child {
+                grid-column: 1/span 2;
+                grid-row: 1/span 2;
+            }
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    
+    &.kodelisting-image-carousel {
+        .swiper-slide {
+            img {
+                width: 100%;
+            }
+        }
+        .tm-swiper-button-prev {
+            left: 40px;
+        }
+        .tm-swiper-button-next {
+            right: 40px;
+        }
+        .swiper-pagination {
+            position: absolute;
+            bottom: 40px;
+        }
+    }
+    
+    &.slider-dots-overlap {
+        .slick-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            color: #fff;
+        }
+    }
+    
+    &.variable-width {
+        .kodelisting-gallery-item {
+            height: 600px;
+
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+    }
+    
+    &.style-overflow {
+        .slick-list {
+            overflow: visible;
+        }
+        
+        .slick-arrow.slick-prev {
+            left: -30px;
+        }
+        
+        .slick-arrow.slick-next {
+            right: -30px;
+        }
+    }
+}

@@ -1,0 +1,128 @@
+
+@mixin fontsize($size-px, $content:null) {
+  font: {
+    size: $size-px * 1px $content;
+    size: $size-px/16 * 1rem $content;
+  }
+}
+
+
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+    -ms-transform: $transform;
+    transform: $transform;
+}
+
+@mixin translate($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+@mixin translateX($x) {
+    @include transform(translateX($x));
+}
+
+@mixin translateY($y) {
+    @include transform(translateY($y));
+}
+
+@mixin rotate($deg) {
+    @include transform(rotate($deg));
+}
+
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+
+@mixin scaleX($scalex) {
+    @include transform(scaleX($scalex));
+}
+
+@mixin scaleY($scaley) {
+    @include transform(scaleY($scaley));
+}
+
+
+@mixin centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+}
+
+@mixin centered-vertical {
+    position: absolute;
+    top: 50%;
+    @include translateY(-50%);
+}
+
+@mixin centered-horizontal {
+    position: absolute;
+    left: 50%;
+    @include translateX(-50%);
+}
+@mixin fontElegant {
+    font-family: 'linearicons-free';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+@mixin animation($animation) {
+    -webkit-animation: $animation;
+    animation: $animation;
+}
+
+@mixin flex {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@mixin flexCenter {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+@mixin flexVStart {
+    -webkit-align-items: flex-start;
+    -ms-flex-align: flex-start;
+    align-items: flex-start;
+}
+
+@mixin flexColumn {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+@mixin flexVMiddle {
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+@mixin flexVEnd {
+    -webkit-align-items: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+@mixin flexWrap {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+@mixin flexNoWrap {
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}

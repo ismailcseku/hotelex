@@ -1,0 +1,516 @@
+
+// Single Room Booking Form
+.kodelisting-room-booking {
+    --csrb-bg: transparent;
+    --csrb-border-radius: 8px;
+    --total-divider: rgba(0, 0, 0, 0.1);
+    --inner-bd: var(--theme-color1);
+    position: relative;
+
+    &.with-inner-border {
+        &:after {
+            @include centered;
+            display: block;
+            width: calc(100% - 20px);
+            height: calc(100% - 20px);
+            content: "";
+            border: 1px solid var(--inner-bd);
+            pointer-events: none;
+        }
+    }
+
+    .room-booking-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 32px;
+
+        h4 {
+            @include fontsize(30);
+            line-height: 1.2;
+            margin: 0;
+
+            + span {
+                text-align: right;
+            }
+        }
+
+        .base-price {
+            @include fontsize(18);
+            font-weight: 500;
+
+            del {
+                @include fontsize(15);
+                font-weight: 400;
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .kodelisting-room-booking-wrap {
+        padding: 50px 45px 55px;
+        background: var(--csrb-bg);
+        border-radius: var(--csrb-border-radius);
+        border: 1px solid var(--theme-color1);
+        transition: opacity 0.3s;
+    }
+
+    .kodelisting-form-group {
+        margin-top: 60px;
+    }
+
+    .kodelisting-title {
+        @include fontsize(24);
+        line-height: 1.2;
+
+        + .kodelisting-extra-service {
+            margin-top: 10px;
+        }
+    }
+
+    .kodelisting-form-field.kodelisting-rooms {
+        position: relative;
+    }
+
+    .kodelisting-form-notice {
+        --line-space: 15px;
+        position: absolute;
+        top: 50%;
+        right: -4px;
+        @include translate(100%, -50%);
+        margin-top: calc(var(--field-space)/2);
+        padding: 3px 8px;
+        width: fit-content;
+        z-index: 99;
+        background: var(--text-color);
+        color: #fff;
+        border-radius: 2px;
+        @include fontsize(10);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        transition: 0.3s;
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+
+        p {
+            margin: 0;
+        }
+
+        &.show {
+            opacity: 1;
+            pointer-events: auto;
+            visibility: visible;
+        }
+
+        &:after {
+            position: absolute;
+            display: block;
+            top: 50%;
+            @include transform(translateY(-50%) rotate(45deg));
+            left: -2px;
+            width: 6px;
+            height: 6px;
+            background: var(--text-color);
+            content: "";
+        }
+    }
+
+    .kodelisting-extra-service {
+        .field-wrap {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .label-checkbox.obligatory {
+            cursor: not-allowed;
+
+            * {
+                pointer-events: none;
+            }
+        }
+    }
+
+    .hidden-check {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        @include translateY(-50%);
+        opacity: 0;
+        width: 17px;
+        height: 17px;
+        cursor: pointer;
+
+        &:checked + .kodelisting-styled-checkbox:after {
+            opacity: 1;
+        }
+    }
+
+    .kodelisting-styled-checkbox {
+        position: relative;
+        width: 17px;
+        height: 17px;
+        border: 1px solid var(--form-border-color);
+        margin-right: 12px;
+        pointer-events: none;
+
+        &:after {
+            @include centered;
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: var(--form-bg);
+            content: "";
+            opacity: 0;
+        }
+    }
+
+    .label-checkbox {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .checkbox-label label {
+            cursor: pointer;
+        }
+    }
+
+    .price-quantity {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .kodelisting-form-price {
+            @include fontsize(14);
+            line-height: 35px;
+
+            &:not(:last-child) {
+                margin-right: 15px;
+            }
+
+            &.kodelisting-form-price-long {
+                .kodelisting-form-price-brief {
+                    &:after {
+                        display: inline-block;
+                        margin-left: 4px;
+                        content: "...";
+                    }
+                }
+
+                .kodelisting-form-price-all {
+                    position: absolute;
+                    z-index: 9;
+                    top: 0;
+                    right: 0;
+                    @include translateY(-100%);
+                    padding: 10px;
+                    width: fit-content;
+                    border-radius: 4px;
+                    background: var(--text-color);
+                    color: #fff;
+                    @include fontsize(12.5);
+                    line-height: 1.5;
+                    white-space: nowrap;
+                    opacity: 0;
+                    pointer-events: none;
+                    visibility: hidden;
+                    transition: opacity 0.3s;
+
+                    &:after {
+                        position: absolute;
+                        right: 30px;
+                        bottom: -4px;
+                        @include rotate(45deg);
+                        width: 10px;
+                        height: 10px;
+                        background: var(--text-color);
+                        content: "";
+                    }
+                }
+
+                &:hover {
+                    .kodelisting-form-price-all {
+                        opacity: 1;
+                        pointer-events: auto;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+
+        .field-input-wrap {
+            width: 65px;
+
+            input {
+                --field-height: 35px;
+                text-align: left;
+            }
+        }
+
+        .kodelisting-dropdown {
+            bottom: -5px;
+            padding: 10px 5px;
+            min-width: 130px !important;
+
+            .kodelisting-form-label {
+                display: none;
+            }
+
+            .kodelisting-dropdown-item {
+                justify-content: center;
+            }
+
+            .kodelisting-quantity .input-text {
+                @include fontsize(14);
+            }
+        }
+    }
+
+    .kodelisting-form-total-price {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 35px;
+        padding-top: 40px;
+        cursor: pointer;
+
+        &:before {
+            @include centered-horizontal;
+            top: 0;
+            display: block;
+            width: calc(100% + 70px);
+            height: 1px;
+            background: var(--total-divider);
+            content: "";
+        }
+
+        .total-price {
+            @include fontsize(24);
+        }
+    }
+
+    .kodelisting-form-price-details {
+        position: relative;
+        margin-top: 20px;
+        @include fontsize(15);
+
+        ul {
+            display: block;
+            margin: 0;
+        }
+
+        li {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed var(--total-divider);
+
+            &.kodelisting-form-price-details-total {
+                @include fontsize(18);
+                font-weight: 500;
+            }
+
+            &.with-tax-info {
+                align-items: flex-start;
+
+                .kodelisting-pd-value {
+                    text-align: right;
+                }
+
+                .includes_tax,
+                .excludes_tax {
+                    display: block;
+                    font-weight: 400;
+                    opacity: 0.6;
+                    @include fontsize(14);
+                }
+            }
+
+            &.kodelisting-pd-total-base > .kodelisting-pd-label {
+                cursor: pointer;
+            }
+
+            .info-indicator {
+                @include translateY(-1px);
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                border: 1px solid;
+                border-radius: 50%;
+                @include fontsize(12);
+                font-style: italic;
+                line-height: 12px;
+                text-align: center;
+                font-family: serif;
+                font-weight: 600;
+                opacity: 0.6;
+            }
+
+            .kodelisting-base-price-breakdown {
+                --line-space: 15px;
+                position: absolute;
+                top: -5px;
+                left: 0;
+                @include translateY(-100%);
+                padding: 20px 24px;
+                width: 100%;
+                z-index: 99;
+                background: #fff;
+                border-radius: 8px;
+                box-shadow: 0 5px 30px rgba(80, 57, 24, 0.3);
+                transition: 0.3s;
+                opacity: 0;
+                pointer-events: none;
+                visibility: hidden;
+
+                &.show {
+                    opacity: 1;
+                    pointer-events: auto;
+                    visibility: visible;
+                }
+
+                &:after {
+                    position: absolute;
+                    display: none;
+                    width: 10px;
+                    height: 10px;
+                    background: #fff;
+                    content: "";
+                }
+            }
+
+            .breakdown-title,
+            .breakdown-footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                @include fontsize(16);
+                font-weight: 500;
+            }
+
+            .breakdown-title {
+                padding-bottom: var(--line-space);
+                margin-bottom: var(--line-space);
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .breakdown-main {
+                max-height: 300px;
+                overflow: auto;
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+                -webkit-overflow-scrolling: touch;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                li {
+                    margin: 0;
+                    padding: 0;
+                    border: none;
+                    @include fontsize(14);
+
+                    &:not(:first-child) {
+                        margin-top: 8px;
+                    }
+                }
+            }
+
+            .breakdown-footer {
+                padding-top: var(--line-space);
+                margin-top: var(--line-space);
+                border-top: 1px solid var(--border-color);
+            }
+
+            del {
+                opacity: 0.6;
+            }
+        }
+
+        .discounted {
+            color: red;
+        }
+    }
+
+    .kodelisting-reservation-form.style-block .kodelisting-form-field.kodelisting-submit {
+        padding-top: 35px;
+    }
+
+    .kodelisting-form-error-message,
+    .kodelisting-form-success-message {
+        margin-top: 12px;
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    .kodelisting-form-error-message {
+        color: red;
+    }
+
+    .kodelisting-form-success-message {
+        color: green;
+    }
+
+    .kodelisting-submit .btn-text {
+        position: relative;
+        display: block;
+
+        &:after {
+            position: absolute;
+            top: 1px;
+            right: -30px;
+            display: block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 2px solid currentColor;
+            border-top: 2px solid transparent;
+            @include animation(spin 1s linear infinite);
+            transition: opacity 0.3s;
+            transform-origin: 50% 50%;
+            opacity: 0;
+            content: "";
+        }
+    }
+
+    &.loading {
+        .kodelisting-room-booking-wrap {
+            pointer-events: none;
+            opacity: 0.5;
+        }   
+
+        .kodelisting-submit .btn-text:after {
+            opacity: 1;
+        }   
+    }
+}
+
+
+
+@media (min-width: $ele-breakpoint-laptop-min) {
+    .kodelisting-room-booking .kodelisting-form-price-details li .kodelisting-base-price-breakdown {
+        top: 20px;
+        left: 0;
+        @include translate(-105%, -50%);
+
+        &:after {
+            right: -4px;
+        }
+
+        &:after {
+            display: block;
+            top: 50%;
+            @include transform(translateY(-50%) rotate(45deg));
+        }
+    }
+}

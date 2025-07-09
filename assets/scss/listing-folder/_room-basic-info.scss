@@ -1,0 +1,41 @@
+
+
+.kodelisting-room-basic-info {
+    margin: 10px 0 30px;
+    
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        list-style: none;
+        
+        li {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+            padding-right: 30px;
+            line-height: 28px;
+            
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+        
+    .kodelisting-icon {
+        margin-right: 10px;
+
+        i {
+            display: flex;
+            font-size: 25px;
+            color: var(--theme-color1);
+        }
+    }
+    
+    .csrbi-text {
+        @include fontsize(14);
+        white-space: nowrap;
+    }
+}

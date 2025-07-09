@@ -1,0 +1,14 @@
+
+body.single-room {
+    .entry-title {
+        line-height: 1;
+        margin-top: 0;
+    }
+    .main-content-area, .sidebar-area {
+        padding-bottom: 50px;
+    }
+    .similar-rooms {
+        padding-bottom: var(--tm-container-pb);
+    }
+}
+

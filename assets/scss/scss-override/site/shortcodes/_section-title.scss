@@ -1,0 +1,106 @@
+/*
+ * Shortcode: section-title.scss
+ * -----------------------------------------------
+*/
+.tm-sc-section-title {
+  &.line-left-current-theme {
+    .title-wrapper {
+      .subtitle {
+        position: relative;
+        display: inline-block;
+        padding-left: 50px;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 10px;
+          left: 0;
+          width: 37px;
+          height: 10px;
+          background-image: url(../images/current-theme/before.png);
+        }
+      }
+    }
+  }
+  &.line-left-current-theme-white {
+    .title-wrapper {
+      .subtitle {
+        position: relative;
+        display: inline-block;
+        padding-left: 50px;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 10px;
+          left: 0;
+          width: 37px;
+          height: 10px;
+          background-image: url(../images/current-theme/before-white.png);
+        }
+      }
+    }
+  }
+  &.line-right-current-theme {
+    .title-wrapper {
+      .subtitle {
+        position: relative;
+        display: inline-block;
+        font-family: var(--font-current-theme3);
+        &::after {
+          content: "";
+          position: absolute;
+          top: 10px;
+          left: 100%;
+          margin-left: 5px;
+          width: 37px;
+          height: 10px;
+          background-image: url(../images/current-theme/before.png);
+        }
+      }
+    }
+  }
+  &.line-right-current-theme-white {
+    .title-wrapper {
+      .subtitle {
+        position: relative;
+        display: inline-block;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 10px;
+          left: 100%;
+          margin-left: 5px;
+          width: 37px;
+          height: 10px;
+          background-image: url(../images/current-theme/before-white.png);
+        }
+      }
+    }
+  }
+  &.line-both-side-current-theme {
+    .title-wrapper {
+      .subtitle {
+        position: relative;
+        display: inline-block;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 10px;
+          left: -50px;
+          width: 37px;
+          height: 10px;
+          background-image: url(../images/current-theme/before.png);
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 10px;
+          left: 100%;
+          margin-left: 5px;
+          width: 37px;
+          height: 10px;
+          background-image: url(../images/current-theme/before.png);
+        }
+      }
+    }
+  }
+}

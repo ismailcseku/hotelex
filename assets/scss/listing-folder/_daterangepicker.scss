@@ -1,0 +1,222 @@
+.theme-hotelex .daterangepicker {
+  --dropdown-bg: #f8f5f0;
+  --dropdown-color: #000;
+  --dropdown-border: var(--theme-color1);
+  --available-bg: #fff;
+  --active-bg: var(--theme-color1);
+  --active-color: #fff;
+  --inrange-bg: #e5e5e5;
+  --inrange-color: var(--dropdown-color);
+  --disabled-color: #d8d9db;
+  --padding: 8px;
+  --td-border: #d8d9db;
+  --tooltip-bg: #000;
+  --tooltip-color: #fff;
+  --no-check-inout: rgba(0, 0, 0, 0.7);
+  --hover-highlight: var(--theme-color1);
+  background: var(--dropdown-bg);
+  color: var(--dropdown-color);
+  border: 1px solid var(--dropdown-border);
+  border-radius: 0;
+  padding: var(--padding);
+
+  &:before,
+  &:after {
+    display: none;
+  }
+
+  .calendar-table {
+    background: none;
+    border: none;
+
+    table {
+      border: none;
+    }
+
+    th,
+    td {
+      position: relative;
+      padding: 0;
+      max-width: 100%;
+      height: 36px;
+      border: none;
+      border-radius: 0;
+    }
+
+    thead th.month {
+      @include fontsize(16);
+    }
+
+    tbody td {
+      border: 0.0625rem solid var(--td-border);
+    }
+  }
+
+  td:hover {
+    z-index: 99;
+  }
+
+  td.disabled,
+  option.disabled {
+    color: var(--disabled-color) !important;
+    background: none !important;
+
+    &:before,
+    &:not(.maximal-stay-unavailable) .day-tooltip {
+      display: none !important;
+    }
+  }
+
+  td.available {
+    background: var(--available-bg);
+  }
+
+  td.available:hover {
+    background: var(--available-bg);
+  }
+
+  td.no-checkin:not(.off):not(.active):not(.in-range),
+  td.no-checkout:not(.off):not(.active):not(.in-range) {
+    color: var(--no-check-inout);
+  }
+
+  td.in-range {
+    background: var(--inrange-bg);
+    color: var(--inrange-color);
+  }
+
+  td.active {
+    background: var(--active-bg);
+    color: var(--active-color);
+  }
+
+  td.active:hover {
+    background: var(--available-bg);
+    color: var(--dropdown-color);
+  }
+
+  td.active,
+  td.in-range,
+  td.available:hover {
+    position: relative;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: -0.0625rem;
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+      border: 2px solid;
+      box-sizing: border-box;
+      content: "";
+    }
+  }
+
+  td.in-range {
+    &:before {
+      border-color: var(--inrange-bg);
+    }
+
+    &.off:before {
+      border-color: transparent;
+    }
+  }
+
+  td.active {
+    &:before {
+      border-color: var(--active-bg);
+    }
+  }
+
+  td.available:hover {
+    &:before {
+      border-color: var(--hover-highlight);
+    }
+  }
+
+  td.active.off:not(:hover):before {
+    border-color: transparent;
+  }
+
+  th.available:hover {
+    background: none;
+  }
+
+  th.prev,
+  th.next {
+    position: relative;
+
+    span {
+      border-color: var(--dropdown-color);
+    }
+
+    &:before,
+    &:after {
+      @include centered;
+      margin: 1px 0 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      box-sizing: border-box;
+      content: "";
+    }
+
+    &:before {
+      border: 0.0625rem solid var(--td-border);
+    }
+
+    &:after {
+      border: 2px solid var(--hover-highlight);
+      opacity: 0;
+    }
+
+    &:hover:before {
+      opacity: 0;
+    }
+
+    &:hover:after {
+      opacity: 1;
+    }
+
+    span {
+      padding: 2px;
+    }
+  }
+
+  th.prev {
+    &:before,
+    &:after {
+      margin-left: -1px;
+    }
+  }
+
+  .day-tooltip {
+    position: absolute;
+    top: 1px;
+    left: 50%;
+    z-index: 999;
+    @include translate(-50%, -100%);
+    display: block;
+    width: fit-content;
+    height: auto;
+    padding: 2px 6px;
+    background: var(--tooltip-bg);
+    color: var(--tooltip-color);
+    @include fontsize(10);
+    border-radius: 2px;
+    pointer-events: none;
+
+    &:after {
+      position: absolute;
+      display: block;
+      width: 10px;
+      height: 10px;
+      background: var(--tooltip-bg);
+      content: "";
+      bottom: -2px;
+      left: 50%;
+      @include transform(translateX(-50%) rotate(45deg));
+    }
+  }
+}

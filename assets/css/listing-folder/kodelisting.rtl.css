@@ -1,0 +1,1566 @@
+/*
+ * kodelisting.scss
+ * -----------------------------------------------
+*/
+.kodelisting-reservation-form {
+  --field-height: 48px;
+  --field-space: 30px;
+  --dropdown-bg: #fff;
+  --dropdown-color: #000;
+  --dropdown-border: var(--theme-color1);
+  --icon-color: var(--theme-color1);
+  --form-bg: var(--theme-color1);
+  --form-border-color: rgba(var(--theme-color1-rgb), 0.3);
+  --field-space: 12px;
+  --form-side-padding: 10px;
+}
+.kodelisting-reservation-form input[type=text], .kodelisting-reservation-form input[type=email], .kodelisting-reservation-form input[type=url], .kodelisting-reservation-form input[type=file], .kodelisting-reservation-form input[type=password], .kodelisting-reservation-form input[type=number], .kodelisting-reservation-form input[type=date], .kodelisting-reservation-form input[type=search], .kodelisting-reservation-form input[type=tel], .kodelisting-reservation-form textarea {
+  width: 100%;
+  padding: 5px var(--form-side-padding);
+}
+.kodelisting-reservation-form .kodelisting-form-field .field-wrap,
+.kodelisting-reservation-form .kodelisting-form-field .field-input-wrap {
+  position: relative;
+}
+.kodelisting-reservation-form .kodelisting-form-field:not(.kodelisting-submit) .field-input-wrap:after {
+  font-family: "linearicons-free";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  content: "\e874";
+  font-size: 12px;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 10px;
+  opacity: 0.5;
+}
+.kodelisting-reservation-form .kodelisting-form-label {
+  display: block;
+}
+.kodelisting-reservation-form .kodelisting-form-label .kodelisting-item-description {
+  display: block;
+  margin-top: -2px;
+  font-family: var(--body-font);
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 1;
+  opacity: 0.5;
+}
+.kodelisting-reservation-form .field-wrap > .kodelisting-form-label {
+  color: var(--text-color);
+}
+.kodelisting-reservation-form input[type=text],
+.kodelisting-reservation-form input[type=email],
+.kodelisting-reservation-form input[type=url],
+.kodelisting-reservation-form input[type=file],
+.kodelisting-reservation-form input[type=password],
+.kodelisting-reservation-form input[type=number],
+.kodelisting-reservation-form input[type=date],
+.kodelisting-reservation-form input[type=search],
+.kodelisting-reservation-form input[type=tel],
+.kodelisting-reservation-form textarea,
+.kodelisting-reservation-form select {
+  height: var(--field-height);
+  font-size: 14px;
+  font-size: 0.875rem;
+  background: none;
+  border-color: var(--form-border-color);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0;
+  color: var(--text-color);
+}
+.kodelisting-reservation-form select {
+  -webkit-appearance: none !important;
+  width: 100%;
+}
+.kodelisting-reservation-form button[type=submit] {
+  padding: 0 15px;
+  width: 100%;
+  height: var(--field-height);
+  line-height: 1.2;
+  text-align: center;
+}
+.kodelisting-reservation-form.skin-default .kodelisting-form-field:not(:first-child) {
+  padding-top: var(--field-space);
+}
+.kodelisting-reservation-form.skin-default .form-field-col-1-2 {
+  display: inline-block;
+  width: 49.2%;
+}
+.kodelisting-reservation-form.skin-default .form-field-col-1-2.kodelisting-adults {
+  padding-left: calc(var(--field-space) / 2);
+}
+.kodelisting-reservation-form.skin-default .form-field-col-1-2.kodelisting-children {
+  padding-right: calc(var(--field-space) / 2);
+}
+.kodelisting-reservation-form.skin-default .form-field-col-1-2 .kodelisting-dropdown {
+  padding: 15px;
+}
+.kodelisting-reservation-form.skin-default .form-field-col-1-2 .kodelisting-dropdown .kodelisting-dropdown-item {
+  flex-wrap: wrap;
+}
+.kodelisting-reservation-form.skin-default .form-field-col-1-2 .kodelisting-dropdown .kodelisting-form-label {
+  display: none;
+}
+.kodelisting-reservation-form.skin-default .form-field-col-1-2 .kodelisting-dropdown .kodelisting-dropdown-item {
+  justify-content: center;
+}
+.kodelisting-reservation-form.skin-default .form-field-col-1-2 .kodelisting-dropdown .kodelisting-item-description {
+  padding-top: 5px;
+  width: 100%;
+  border-top: 1px dotted var(--dropdown-border);
+  text-align: center;
+  font-size: 12px;
+  font-size: 0.75rem;
+  opacity: 0.5;
+}
+.kodelisting-reservation-form.skin-default .kodelisting-dropdown {
+  min-width: 100px;
+  width: 100%;
+}
+.kodelisting-reservation-form.skin-horizontal-form .kodelisting-form-wrap {
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 calc(0px - var(--field-space) / 2);
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+@media (max-width: 1024px) {
+  .kodelisting-reservation-form.skin-horizontal-form .kodelisting-form-wrap {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+.kodelisting-reservation-form.skin-horizontal-form .kodelisting-form-wrap .kodelisting-form-field {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+  padding: 0 calc(var(--field-space) / 2);
+}
+@media (max-width: 1024px) {
+  .kodelisting-reservation-form.skin-horizontal-form .kodelisting-form-wrap .kodelisting-form-field {
+    width: 50%;
+  }
+  .kodelisting-reservation-form.skin-horizontal-form .kodelisting-form-wrap .kodelisting-form-field {
+    margin-top: 15px;
+  }
+  .kodelisting-reservation-form.skin-horizontal-form .kodelisting-form-wrap .kodelisting-form-field:nth-child(-n+2) {
+    margin-top: 0;
+  }
+  .kodelisting-reservation-form.skin-horizontal-form .kodelisting-form-wrap .kodelisting-form-field.kodelisting-submit {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .kodelisting-reservation-form.skin-horizontal-form .kodelisting-form-wrap .kodelisting-form-field {
+    width: 100%;
+  }
+  .kodelisting-reservation-form.skin-horizontal-form .kodelisting-form-wrap .kodelisting-form-field:nth-child(-n+2) {
+    margin-top: var(--field-space);
+  }
+}
+.kodelisting-reservation-form.skin-horizontal-form button[type=submit] {
+  padding: 0 15px;
+  text-align: center;
+  width: 100%;
+}
+.kodelisting-reservation-form.skin-horizontal-form.skin-group-fields-form4 {
+  --field-space: 15px;
+}
+.kodelisting-reservation-form.skin-horizontal-form.skin-group-fields-form4 .kodelisting-form-wrap {
+  flex-wrap: wrap;
+}
+.kodelisting-reservation-form.skin-horizontal-form.skin-group-fields-form4 .kodelisting-form-field {
+  display: block;
+  width: 50%;
+  margin-top: var(--field-space);
+}
+.kodelisting-reservation-form.skin-horizontal-form.skin-group-fields-form4 .kodelisting-form-field:nth-child(-n+2) {
+  margin-top: 0;
+}
+.kodelisting-reservation-form.skin-horizontal-form.skin-group-fields-form4 .kodelisting-form-field.kodelisting-submit:nth-child(5) {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .kodelisting-reservation-form.skin-horizontal-form.skin-group-fields-form4 .kodelisting-form-field {
+    width: 100%;
+  }
+  .kodelisting-reservation-form.skin-horizontal-form.skin-group-fields-form4 .kodelisting-form-field:nth-child(-n+2) {
+    margin-top: var(--field-space);
+  }
+}
+.kodelisting-reservation-form.skin-horizontal-form2 {
+  --field-space: 40px;
+}
+.kodelisting-reservation-form.skin-horizontal-form2 .kodelisting-form-wrap {
+  margin: 0;
+  align-items: center;
+}
+.kodelisting-reservation-form.skin-horizontal-form2 .kodelisting-form-wrap .kodelisting-form-field:not(.kodelisting-submit) {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+}
+.kodelisting-reservation-form.skin-horizontal-form2 .kodelisting-form-wrap .field-wrap {
+  flex: 1 1 auto;
+}
+.kodelisting-reservation-form.skin-horizontal-form2 .kodelisting-form-wrap .kodelisting-form-field {
+  padding-right: 0;
+  padding-left: 0;
+}
+.kodelisting-reservation-form.skin-horizontal-form2 .kodelisting-form-wrap .kodelisting-form-field.kodelisting-check-out, .kodelisting-reservation-form.skin-horizontal-form2 .kodelisting-form-wrap .kodelisting-form-field.kodelisting-guests {
+  padding-right: var(--field-space);
+}
+@media (max-width: 1024px) {
+  .kodelisting-reservation-form.skin-horizontal-form2 .kodelisting-form-wrap .kodelisting-form-field.kodelisting-check-out, .kodelisting-reservation-form.skin-horizontal-form2 .kodelisting-form-wrap .kodelisting-form-field.kodelisting-guests {
+    padding-right: 0;
+  }
+}
+@media (max-width: 1024px) {
+  .kodelisting-reservation-form.skin-horizontal-form2 .kodelisting-form-wrap .kodelisting-form-field {
+    width: 100%;
+  }
+  .kodelisting-reservation-form.skin-horizontal-form2 .kodelisting-form-wrap .kodelisting-form-field {
+    margin-top: 15px !important;
+  }
+}
+.kodelisting-reservation-form.skin-horizontal-form2 .kodelisting-form-icon {
+  width: 20px;
+  height: 25px;
+  margin-left: 25px;
+}
+.kodelisting-reservation-form.skin-horizontal-form2 .kodelisting-form-icon svg {
+  width: 20px;
+  height: auto;
+}
+.kodelisting-reservation-form.skin-horizontal-form2 .kodelisting-form-icon svg path {
+  fill: var(--icon-color);
+}
+.kodelisting-reservation-form.skin-horizontal-form2 .kodelisting-form-field.kodelisting-guests .kodelisting-form-icon,
+.kodelisting-reservation-form.skin-horizontal-form2 .kodelisting-form-field.kodelisting-guests .kodelisting-form-icon svg {
+  width: 25px;
+}
+.kodelisting-reservation-form.skin-horizontal-form2 .kodelisting-form-field:not(.kodelisting-submit) .field-input-wrap:after {
+  display: none;
+}
+.kodelisting-reservation-form.skin-horizontal-form2 .kodelisting-form-field:not(.kodelisting-submit):after {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 30px;
+  display: block;
+  width: 1px;
+  height: 56px;
+  background: rgba(250, 250, 250, 0.1);
+  content: "";
+  left: 0;
+}
+.kodelisting-reservation-form.skin-horizontal-form2 .kodelisting-form-field.kodelisting-guests:after {
+  display: none;
+}
+.kodelisting-reservation-form.skin-horizontal-form2 .field-wrap > .kodelisting-form-label {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.2;
+}
+.kodelisting-reservation-form.skin-horizontal-form2 input[type=text],
+.kodelisting-reservation-form.skin-horizontal-form2 input[type=email],
+.kodelisting-reservation-form.skin-horizontal-form2 input[type=url],
+.kodelisting-reservation-form.skin-horizontal-form2 input[type=file],
+.kodelisting-reservation-form.skin-horizontal-form2 input[type=password],
+.kodelisting-reservation-form.skin-horizontal-form2 input[type=number],
+.kodelisting-reservation-form.skin-horizontal-form2 input[type=date],
+.kodelisting-reservation-form.skin-horizontal-form2 input[type=search],
+.kodelisting-reservation-form.skin-horizontal-form2 input[type=tel],
+.kodelisting-reservation-form.skin-horizontal-form2 textarea,
+.kodelisting-reservation-form.skin-horizontal-form2 select {
+  padding: 0;
+  height: auto;
+  border: none;
+  line-height: 1.2;
+}
+.kodelisting-reservation-form.skin-horizontal-form2 button[type=submit] {
+  min-height: 56px;
+}
+.kodelisting-reservation-form.skin-horizontal-form2.inline-label {
+  --field-space: 60px;
+}
+.kodelisting-reservation-form.skin-horizontal-form2.inline-label .kodelisting-form-icon {
+  margin-left: 15px;
+}
+.kodelisting-reservation-form.skin-horizontal-form2.inline-label .kodelisting-form-label {
+  right: 0;
+}
+.kodelisting-reservation-form.skin-horizontal-form2.inline-label .kodelisting-form-field:not(.kodelisting-submit):after {
+  left: 0;
+}
+.kodelisting-reservation-form.skin-horizontal-form2.inline-label .kodelisting-form-field.kodelisting-check-in,
+.kodelisting-reservation-form.skin-horizontal-form2.inline-label .kodelisting-form-field.kodelisting-check-out {
+  width: 23%;
+}
+.kodelisting-reservation-form.skin-horizontal-form2.inline-label .kodelisting-form-field.kodelisting-guests {
+  width: 30%;
+}
+.kodelisting-reservation-form.skin-horizontal-form2.inline-label .kodelisting-form-field.kodelisting-submit {
+  width: 24%;
+}
+.kodelisting-reservation-form.style-banner-3 {
+  --field-height: 60px;
+  --field-space: 0px;
+  --btn-radius: 0px;
+}
+.kodelisting-reservation-form.style-banner-3 .kodelisting-form-wrap {
+  margin: 0 5px;
+}
+.kodelisting-reservation-form.style-banner-3 .kodelisting-form-wrap:before {
+  position: absolute;
+  top: 5px;
+  right: -5px;
+  display: block;
+  width: calc(100% + 10px);
+  height: calc(100% - 10px);
+  border: 1px solid var(--form-border-color);
+  content: "";
+  pointer-events: none;
+}
+.kodelisting-reservation-form.style-banner-3 .kodelisting-form-wrap .kodelisting-form-field {
+  padding: 0;
+}
+.kodelisting-reservation-form.style-banner-3 .kodelisting-form-wrap .button {
+  background: none;
+  color: inherit;
+  border: 1px solid var(--form-border-color);
+}
+.kodelisting-reservation-form.inline-label .field-wrap > .kodelisting-form-label {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 15px;
+}
+.kodelisting-reservation-form.inline-label .field-input-wrap > * {
+  text-align: left;
+  padding-left: 35px;
+}
+.kodelisting-reservation-form.inline-label.kodelisting-form-underline .field-wrap > .kodelisting-form-label {
+  right: 0;
+}
+.kodelisting-reservation-form.inline-label.kodelisting-form-underline .field-input-wrap > * {
+  padding-left: 25px;
+}
+.kodelisting-reservation-form.inline-label.kodelisting-form-underline .kodelisting-form-field:not(.kodelisting-submit) .field-input-wrap:after {
+  left: 0;
+}
+.kodelisting-reservation-form.hide-label .field-wrap > .kodelisting-form-label {
+  display: none;
+}
+.kodelisting-reservation-form .kodelisting-dropdown {
+  position: absolute;
+  bottom: -12px;
+  right: 0;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+  z-index: -1;
+  display: block;
+  min-width: 320px;
+  background: var(--dropdown-bg);
+  color: var(--dropdown-color);
+  border: 1px solid var(--dropdown-border);
+  box-shadow: 0 0 50px rgba(50, 50, 50, 0.2);
+  padding: 30px;
+  transition: 0.3s;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.kodelisting-reservation-form .kodelisting-dropdown.is-open {
+  z-index: 999;
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+.kodelisting-reservation-form .kodelisting-dropdown .kodelisting-dropdown-item,
+.kodelisting-reservation-form .kodelisting-dropdown .kodelisting-quantity {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.kodelisting-reservation-form .kodelisting-dropdown .kodelisting-dropdown-item:not(:last-child) {
+  margin-bottom: 15px;
+}
+.kodelisting-reservation-form .kodelisting-dropdown .kodelisting-quantity .input-text {
+  padding: 0;
+  margin: 0;
+  width: 40px;
+  height: auto;
+  background: none;
+  border: none;
+  text-align: center;
+  color: inherit;
+  font-size: 16px;
+  line-height: 1.2;
+}
+.kodelisting-reservation-form .kodelisting-dropdown .kodelisting-quantity .minus,
+.kodelisting-reservation-form .kodelisting-dropdown .kodelisting-quantity .plus {
+  position: relative;
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  color: inherit;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+}
+.kodelisting-reservation-form .kodelisting-dropdown .kodelisting-quantity .minus:before, .kodelisting-reservation-form .kodelisting-dropdown .kodelisting-quantity .minus:after,
+.kodelisting-reservation-form .kodelisting-dropdown .kodelisting-quantity .plus:before,
+.kodelisting-reservation-form .kodelisting-dropdown .kodelisting-quantity .plus:after {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+  -ms-transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
+  display: block;
+  content: "";
+  background: currentColor;
+}
+.kodelisting-reservation-form .kodelisting-dropdown .kodelisting-quantity .minus:before,
+.kodelisting-reservation-form .kodelisting-dropdown .kodelisting-quantity .plus:before {
+  width: 12px;
+  height: 1px;
+}
+.kodelisting-reservation-form .kodelisting-dropdown .kodelisting-quantity .plus:after {
+  width: 1px;
+  height: 12px;
+}
+.kodelisting-reservation-form .date-range-picker {
+  position: absolute;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.kodelisting-room-booking {
+  --csrb-bg: transparent;
+  --csrb-border-radius: 8px;
+  --total-divider: rgba(0, 0, 0, 0.1);
+  --inner-bd: var(--theme-color1);
+  position: relative;
+}
+.kodelisting-room-booking.with-inner-border:after {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+  -ms-transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
+  display: block;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  content: "";
+  border: 1px solid var(--inner-bd);
+  pointer-events: none;
+}
+.kodelisting-room-booking .room-booking-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+}
+.kodelisting-room-booking .room-booking-title h4 {
+  font-size: 30px;
+  font-size: 1.875rem;
+  line-height: 1.2;
+  margin: 0;
+}
+.kodelisting-room-booking .room-booking-title h4 + span {
+  text-align: left;
+}
+.kodelisting-room-booking .room-booking-title .base-price {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.kodelisting-room-booking .room-booking-title .base-price del {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  opacity: 0.5;
+}
+.kodelisting-room-booking .kodelisting-room-booking-wrap {
+  padding: 50px 45px 55px;
+  background: var(--csrb-bg);
+  border-radius: var(--csrb-border-radius);
+  border: 1px solid var(--theme-color1);
+  transition: opacity 0.3s;
+}
+.kodelisting-room-booking .kodelisting-form-group {
+  margin-top: 60px;
+}
+.kodelisting-room-booking .kodelisting-title {
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+.kodelisting-room-booking .kodelisting-title + .kodelisting-extra-service {
+  margin-top: 10px;
+}
+.kodelisting-room-booking .kodelisting-form-field.kodelisting-rooms {
+  position: relative;
+}
+.kodelisting-room-booking .kodelisting-form-notice {
+  --line-space: 15px;
+  position: absolute;
+  top: 50%;
+  left: -4px;
+  -webkit-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+  margin-top: calc(var(--field-space) / 2);
+  padding: 3px 8px;
+  width: fit-content;
+  z-index: 99;
+  background: var(--text-color);
+  color: #fff;
+  border-radius: 2px;
+  font-size: 10px;
+  font-size: 0.625rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: 0.3s;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.kodelisting-room-booking .kodelisting-form-notice p {
+  margin: 0;
+}
+.kodelisting-room-booking .kodelisting-form-notice.show {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+.kodelisting-room-booking .kodelisting-form-notice:after {
+  position: absolute;
+  display: block;
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+  -ms-transform: translateY(-50%) rotate(-45deg);
+  transform: translateY(-50%) rotate(-45deg);
+  right: -2px;
+  width: 6px;
+  height: 6px;
+  background: var(--text-color);
+  content: "";
+}
+.kodelisting-room-booking .kodelisting-extra-service .field-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.kodelisting-room-booking .kodelisting-extra-service .label-checkbox.obligatory {
+  cursor: not-allowed;
+}
+.kodelisting-room-booking .kodelisting-extra-service .label-checkbox.obligatory * {
+  pointer-events: none;
+}
+.kodelisting-room-booking .hidden-check {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  opacity: 0;
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+.kodelisting-room-booking .hidden-check:checked + .kodelisting-styled-checkbox:after {
+  opacity: 1;
+}
+.kodelisting-room-booking .kodelisting-styled-checkbox {
+  position: relative;
+  width: 17px;
+  height: 17px;
+  border: 1px solid var(--form-border-color);
+  margin-left: 12px;
+  pointer-events: none;
+}
+.kodelisting-room-booking .kodelisting-styled-checkbox:after {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+  -ms-transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: var(--form-bg);
+  content: "";
+  opacity: 0;
+}
+.kodelisting-room-booking .label-checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.kodelisting-room-booking .label-checkbox .checkbox-label label {
+  cursor: pointer;
+}
+.kodelisting-room-booking .price-quantity {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.kodelisting-room-booking .price-quantity .kodelisting-form-price {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 35px;
+}
+.kodelisting-room-booking .price-quantity .kodelisting-form-price:not(:last-child) {
+  margin-left: 15px;
+}
+.kodelisting-room-booking .price-quantity .kodelisting-form-price.kodelisting-form-price-long .kodelisting-form-price-brief:after {
+  display: inline-block;
+  margin-right: 4px;
+  content: "...";
+}
+.kodelisting-room-booking .price-quantity .kodelisting-form-price.kodelisting-form-price-long .kodelisting-form-price-all {
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+  padding: 10px;
+  width: fit-content;
+  border-radius: 4px;
+  background: var(--text-color);
+  color: #fff;
+  font-size: 12.5px;
+  font-size: 0.78125rem;
+  line-height: 1.5;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.3s;
+}
+.kodelisting-room-booking .price-quantity .kodelisting-form-price.kodelisting-form-price-long .kodelisting-form-price-all:after {
+  position: absolute;
+  left: 30px;
+  bottom: -4px;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  width: 10px;
+  height: 10px;
+  background: var(--text-color);
+  content: "";
+}
+.kodelisting-room-booking .price-quantity .kodelisting-form-price.kodelisting-form-price-long:hover .kodelisting-form-price-all {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+.kodelisting-room-booking .price-quantity .field-input-wrap {
+  width: 65px;
+}
+.kodelisting-room-booking .price-quantity .field-input-wrap input {
+  --field-height: 35px;
+  text-align: right;
+}
+.kodelisting-room-booking .price-quantity .kodelisting-dropdown {
+  bottom: -5px;
+  padding: 10px 5px;
+  min-width: 130px !important;
+}
+.kodelisting-room-booking .price-quantity .kodelisting-dropdown .kodelisting-form-label {
+  display: none;
+}
+.kodelisting-room-booking .price-quantity .kodelisting-dropdown .kodelisting-dropdown-item {
+  justify-content: center;
+}
+.kodelisting-room-booking .price-quantity .kodelisting-dropdown .kodelisting-quantity .input-text {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+.kodelisting-room-booking .kodelisting-form-total-price {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 35px;
+  padding-top: 40px;
+  cursor: pointer;
+}
+.kodelisting-room-booking .kodelisting-form-total-price:before {
+  position: absolute;
+  right: 50%;
+  -webkit-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  transform: translateX(50%);
+  top: 0;
+  display: block;
+  width: calc(100% + 70px);
+  height: 1px;
+  background: var(--total-divider);
+  content: "";
+}
+.kodelisting-room-booking .kodelisting-form-total-price .total-price {
+  font-size: 24px;
+  font-size: 1.5rem;
+}
+.kodelisting-room-booking .kodelisting-form-price-details {
+  position: relative;
+  margin-top: 20px;
+  font-size: 15px;
+  font-size: 0.9375rem;
+}
+.kodelisting-room-booking .kodelisting-form-price-details ul {
+  display: block;
+  margin: 0;
+}
+.kodelisting-room-booking .kodelisting-form-price-details li {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--total-divider);
+}
+.kodelisting-room-booking .kodelisting-form-price-details li.kodelisting-form-price-details-total {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.kodelisting-room-booking .kodelisting-form-price-details li.with-tax-info {
+  align-items: flex-start;
+}
+.kodelisting-room-booking .kodelisting-form-price-details li.with-tax-info .kodelisting-pd-value {
+  text-align: left;
+}
+.kodelisting-room-booking .kodelisting-form-price-details li.with-tax-info .includes_tax,
+.kodelisting-room-booking .kodelisting-form-price-details li.with-tax-info .excludes_tax {
+  display: block;
+  font-weight: 400;
+  opacity: 0.6;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+.kodelisting-room-booking .kodelisting-form-price-details li.kodelisting-pd-total-base > .kodelisting-pd-label {
+  cursor: pointer;
+}
+.kodelisting-room-booking .kodelisting-form-price-details li .info-indicator {
+  -webkit-transform: translateY(-1px);
+  -ms-transform: translateY(-1px);
+  transform: translateY(-1px);
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 1px solid;
+  border-radius: 50%;
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-style: italic;
+  line-height: 12px;
+  text-align: center;
+  font-family: serif;
+  font-weight: 600;
+  opacity: 0.6;
+}
+.kodelisting-room-booking .kodelisting-form-price-details li .kodelisting-base-price-breakdown {
+  --line-space: 15px;
+  position: absolute;
+  top: -5px;
+  right: 0;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+  padding: 20px 24px;
+  width: 100%;
+  z-index: 99;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 30px rgba(80, 57, 24, 0.3);
+  transition: 0.3s;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.kodelisting-room-booking .kodelisting-form-price-details li .kodelisting-base-price-breakdown.show {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+.kodelisting-room-booking .kodelisting-form-price-details li .kodelisting-base-price-breakdown:after {
+  position: absolute;
+  display: none;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  content: "";
+}
+.kodelisting-room-booking .kodelisting-form-price-details li .breakdown-title,
+.kodelisting-room-booking .kodelisting-form-price-details li .breakdown-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.kodelisting-room-booking .kodelisting-form-price-details li .breakdown-title {
+  padding-bottom: var(--line-space);
+  margin-bottom: var(--line-space);
+  border-bottom: 1px solid var(--border-color);
+}
+.kodelisting-room-booking .kodelisting-form-price-details li .breakdown-main {
+  max-height: 300px;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.kodelisting-room-booking .kodelisting-form-price-details li .breakdown-main::-webkit-scrollbar {
+  display: none;
+}
+.kodelisting-room-booking .kodelisting-form-price-details li .breakdown-main li {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+.kodelisting-room-booking .kodelisting-form-price-details li .breakdown-main li:not(:first-child) {
+  margin-top: 8px;
+}
+.kodelisting-room-booking .kodelisting-form-price-details li .breakdown-footer {
+  padding-top: var(--line-space);
+  margin-top: var(--line-space);
+  border-top: 1px solid var(--border-color);
+}
+.kodelisting-room-booking .kodelisting-form-price-details li del {
+  opacity: 0.6;
+}
+.kodelisting-room-booking .kodelisting-form-price-details .discounted {
+  color: red;
+}
+.kodelisting-room-booking .kodelisting-reservation-form.style-block .kodelisting-form-field.kodelisting-submit {
+  padding-top: 35px;
+}
+.kodelisting-room-booking .kodelisting-form-error-message,
+.kodelisting-room-booking .kodelisting-form-success-message {
+  margin-top: 12px;
+}
+.kodelisting-room-booking .kodelisting-form-error-message p,
+.kodelisting-room-booking .kodelisting-form-success-message p {
+  margin-bottom: 0;
+}
+.kodelisting-room-booking .kodelisting-form-error-message {
+  color: red;
+}
+.kodelisting-room-booking .kodelisting-form-success-message {
+  color: green;
+}
+.kodelisting-room-booking .kodelisting-submit .btn-text {
+  position: relative;
+  display: block;
+}
+.kodelisting-room-booking .kodelisting-submit .btn-text:after {
+  position: absolute;
+  top: 1px;
+  left: -30px;
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-top: 2px solid transparent;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  transition: opacity 0.3s;
+  transform-origin: 50% 50%;
+  opacity: 0;
+  content: "";
+}
+.kodelisting-room-booking.loading .kodelisting-room-booking-wrap {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.kodelisting-room-booking.loading .kodelisting-submit .btn-text:after {
+  opacity: 1;
+}
+
+@media (min-width: 1201px) {
+  .kodelisting-room-booking .kodelisting-form-price-details li .kodelisting-base-price-breakdown {
+    top: 20px;
+    right: 0;
+    -webkit-transform: translate(105%, -50%);
+    -ms-transform: translate(105%, -50%);
+    transform: translate(105%, -50%);
+  }
+  .kodelisting-room-booking .kodelisting-form-price-details li .kodelisting-base-price-breakdown:after {
+    left: -4px;
+  }
+  .kodelisting-room-booking .kodelisting-form-price-details li .kodelisting-base-price-breakdown:after {
+    display: block;
+    top: 50%;
+    -webkit-transform: translateY(-50%) rotate(-45deg);
+    -ms-transform: translateY(-50%) rotate(-45deg);
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
+.room-top-section {
+  position: relative;
+}
+.room-top-section .featured-img {
+  position: relative;
+  width: 100%;
+  height: 570px;
+}
+.room-top-section .featured-img img {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+  -ms-transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.room-top-section .kodelisting-gallery-view-all {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 9;
+}
+.room-top-section .kodelisting-gallery-view-all .button {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 10px 30px 10px 15px;
+  font-size: 13px;
+  font-size: 0.8125rem;
+}
+.room-top-section .kodelisting-gallery-view-all .button:before {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 12px;
+  font-family: "linearicons-free";
+  content: "\e86f";
+  font-size: 13px;
+  line-height: 1;
+}
+
+.kodelisting-image-gallery img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  transition: transform 0.3s;
+}
+.kodelisting-image-gallery.gap-0 {
+  --gallery-gap: 0px;
+}
+.kodelisting-image-gallery.gap-2 {
+  --gallery-gap: 2px;
+}
+.kodelisting-image-gallery.gap-5 {
+  --gallery-gap: 5px;
+}
+.kodelisting-image-gallery.gap-10 {
+  --gallery-gap: 10px;
+}
+.kodelisting-image-gallery.gap-16 {
+  --gallery-gap: 16px;
+}
+.kodelisting-image-gallery.gap-20 {
+  --gallery-gap: 20px;
+}
+.kodelisting-image-gallery.gap-32 {
+  --gallery-gap: 32px;
+}
+.kodelisting-image-gallery .kodelisting-gallery-item {
+  position: relative;
+}
+.kodelisting-image-gallery.gallery-grid .kodelisting-gallery-wrap {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: calc(0px - var(--gallery-gap));
+}
+.kodelisting-image-gallery.gallery-grid .kodelisting-gallery-item {
+  padding: var(--gallery-gap);
+}
+.kodelisting-image-gallery.gallery-grid.grid-col-2 .kodelisting-gallery-item {
+  width: 50%;
+}
+.kodelisting-image-gallery.gallery-grid.grid-col-3 .kodelisting-gallery-item {
+  width: 33.33%;
+}
+.kodelisting-image-gallery.gallery-grid.grid-col-4 .kodelisting-gallery-item {
+  width: 25%;
+}
+.kodelisting-image-gallery.gallery-grid.grid-col-5 .kodelisting-gallery-item {
+  width: 20%;
+}
+.kodelisting-image-gallery.gallery-grid.grid-col-6 .kodelisting-gallery-item {
+  width: 16.6666%;
+}
+.kodelisting-image-gallery.gallery-grid.align-middle-v .kodelisting-gallery-item {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.kodelisting-image-gallery.gallery-grid.align-bottom-v .kodelisting-gallery-item {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.kodelisting-image-gallery.gallery-mosaic .kodelisting-gallery-wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+.kodelisting-image-gallery.gallery-mosaic .kodelisting-gallery-wrap .kodelisting-gallery-item:first-child {
+  grid-column: 1/span 2;
+  grid-row: 1/span 2;
+}
+.kodelisting-image-gallery.gallery-mosaic .kodelisting-gallery-wrap img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.kodelisting-image-gallery.kodelisting-image-carousel .swiper-slide img {
+  width: 100%;
+}
+.kodelisting-image-gallery.kodelisting-image-carousel .tm-swiper-button-prev {
+  right: 40px;
+}
+.kodelisting-image-gallery.kodelisting-image-carousel .tm-swiper-button-next {
+  left: 40px;
+}
+.kodelisting-image-gallery.kodelisting-image-carousel .swiper-pagination {
+  position: absolute;
+  bottom: 40px;
+}
+.kodelisting-image-gallery.slider-dots-overlap .slick-dots {
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+  width: 100%;
+  color: #fff;
+}
+.kodelisting-image-gallery.variable-width .kodelisting-gallery-item {
+  height: 600px;
+}
+.kodelisting-image-gallery.variable-width .kodelisting-gallery-item img {
+  height: 100%;
+  width: auto;
+}
+.kodelisting-image-gallery.style-overflow .slick-list {
+  overflow: visible;
+}
+.kodelisting-image-gallery.style-overflow .slick-arrow.slick-prev {
+  right: -30px;
+}
+.kodelisting-image-gallery.style-overflow .slick-arrow.slick-next {
+  left: -30px;
+}
+
+.kodelisting-room-basic-info {
+  margin: 10px 0 30px;
+}
+.kodelisting-room-basic-info ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.kodelisting-room-basic-info ul li {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  padding-left: 30px;
+  line-height: 28px;
+}
+.kodelisting-room-basic-info ul li:last-child {
+  padding-left: 0;
+}
+.kodelisting-room-basic-info .kodelisting-icon {
+  margin-left: 10px;
+}
+.kodelisting-room-basic-info .kodelisting-icon i {
+  display: flex;
+  font-size: 25px;
+  color: var(--theme-color1);
+}
+.kodelisting-room-basic-info .csrbi-text {
+  font-size: 14px;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.kodelisting-rooms {
+  --post-max-width: 800px;
+  --item-v-space: 10px;
+  --icon-size: 25px;
+  --label-bg: #fff;
+  --label-color: #000;
+  --label-border: #fff;
+}
+.kodelisting-rooms .kodelisting-room-item .featured-img {
+  position: relative;
+}
+.kodelisting-rooms .overlay-label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.kodelisting-rooms .overlay-label .overlay-room-info {
+  padding: 3px 10px;
+  font-size: 13px;
+}
+.kodelisting-rooms.layout-standard {
+  --icon-size: 28px;
+}
+.kodelisting-rooms.text-center .kodelisting-room-basic-info ul {
+  justify-content: center;
+}
+.kodelisting-rooms .item-header {
+  margin-bottom: var(--item-v-space);
+}
+.kodelisting-rooms .kodelisting-room-content .item-title {
+  margin-bottom: 0;
+}
+.kodelisting-rooms .kodelisting-room-content .item-subtitle {
+  margin-top: 0;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  color: var(--secondary-color);
+}
+.kodelisting-rooms .kodelisting-room-content .item-subtitle:first-child {
+  margin: 0 0 var(--item-v-space);
+}
+.kodelisting-rooms .kodelisting-room-content .item-excerpt {
+  display: none;
+}
+.kodelisting-rooms.layout-overlay .kodelisting-room-content .item-title {
+  margin-bottom: 0;
+}
+.kodelisting-rooms.layout-overlay .kodelisting-room-content .item-subtitle {
+  color: inherit;
+}
+.kodelisting-rooms.layout-overlay .item-header {
+  margin: 0;
+  transition: opacity 0.4s, transform 0.4s;
+}
+.kodelisting-rooms.layout-overlay .post .kodelisting-room-content {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+.kodelisting-rooms.layout-overlay .hover-show-content {
+  position: absolute !important;
+  z-index: 9;
+  bottom: 0;
+  right: 0;
+  padding: 150px 24px 30px;
+  opacity: 0;
+  transition: opacity 0.4s, transform 0.4s;
+  -webkit-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  transform: translateY(50px);
+}
+.no-touch .kodelisting-rooms.layout-overlay.with-hover-effect .post:hover .item-header {
+  opacity: 0;
+  -webkit-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  transform: translateY(-50px);
+}
+.no-touch .kodelisting-rooms.layout-overlay.with-hover-effect .post:hover .hover-show-content {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+.kodelisting-rooms.layout-overlay.text-v-middle .hover-show-content {
+  top: 50%;
+  bottom: auto;
+  -webkit-transform: translateY(-30%);
+  -ms-transform: translateY(-30%);
+  transform: translateY(-30%);
+  padding-top: 30px;
+}
+.no-touch .kodelisting-rooms.layout-overlay.text-v-middle.with-hover-effect .post:hover .hover-show-content {
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  transition-delay: 0.1s;
+}
+.kodelisting-rooms.layout-overlay.slider-dots-overlap .slick-dots {
+  position: absolute;
+  bottom: 25px;
+  right: 0;
+  width: 100%;
+  color: #fff;
+}
+.kodelisting-rooms.layout-overlay.text-v-middle .featured-img:before {
+  z-index: 7;
+  content: "";
+  background: #000;
+  opacity: 0.3;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+.no-touch .kodelisting-rooms.layout-overlay.text-v-middle .post:hover .featured-img:before {
+  opacity: 0;
+}
+.kodelisting-rooms.layout-overlay.text-v-middle .kodelisting-room-content {
+  width: 100%;
+  height: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  padding-top: 30px;
+}
+.kodelisting-rooms.layout-overlay.text-v-middle .kodelisting-room-content:before {
+  background: none;
+}
+.kodelisting-rooms.layout-overlay .kodelisting-room-basic-info ul li {
+  margin: 0;
+}
+.kodelisting-rooms.kodelisting-rooms-carousel.column-1.carousel-center-mode .post {
+  max-width: var(--post-max-width);
+}
+.elementor-column:only-child .kodelisting-rooms.kodelisting-rooms-carousel:hover .slick-slide {
+  will-change: transform;
+}
+.kodelisting-rooms.kodelisting-rooms-carousel .post {
+  margin-top: 0;
+}
+.kodelisting-rooms.kodelisting-rooms-carousel .posts-wrapper.slick-initialized {
+  display: block;
+}
+.kodelisting-rooms.kodelisting-rooms-carousel.column-1.layout-overlay.carousel-center-mode .kodelisting-room-content {
+  opacity: 1;
+  transition: opacity 0.4s 0.5s;
+}
+.kodelisting-rooms.kodelisting-rooms-carousel.column-1.layout-overlay.carousel-center-mode .slick-initialized .post:not(.slick-center) .kodelisting-room-content {
+  opacity: 0;
+}
+.kodelisting-rooms.kodelisting-rooms-carousel.layout-overlay.slider-dots-overlap.column-1:not(.text-v-middle) .post .post-content {
+  padding-bottom: 55px;
+}
+.kodelisting-rooms.kodelisting-rooms-carousel.layout-overlay.slider-dots-overlap.column-1:not(.text-v-middle) .hover-show-content {
+  padding-bottom: 60px;
+}
+.kodelisting-rooms.kodelisting-rooms-carousel.layout-overlay.text-v-middle.slider-arrows-overlap .kodelisting-room-content,
+.kodelisting-rooms.kodelisting-rooms-carousel.layout-overlay.text-v-middle.slider-arrows-overlap .hover-show-content {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+.kodelisting-rooms.slider-arrow-top .slider-arrows {
+  position: absolute;
+  top: -60px;
+  left: 0;
+}
+.kodelisting-rooms.slider-arrow-top .slider-arrows .slick-arrow {
+  --arrow-size: 40px;
+  position: relative;
+  left: auto !important;
+  right: auto !important;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  margin: 0;
+  border: 1px solid var(--border-color);
+  box-sizing: content-box;
+  box-shadow: none;
+}
+.kodelisting-rooms.slider-arrow-top .slider-arrows .slick-arrow.slick-prev {
+  margin-left: 5px;
+}
+.kodelisting-rooms.hide-slider-dots .slider-dots {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+body.single-room .entry-title {
+  line-height: 1;
+  margin-top: 0;
+}
+body.single-room .main-content-area, body.single-room .sidebar-area {
+  padding-bottom: 50px;
+}
+body.single-room .similar-rooms {
+  padding-bottom: var(--tm-container-pb);
+}
+
+.kodelisting-rooms .kodelisting-rooms-image-carousel .tm-swiper-button-prev {
+  right: 40px;
+}
+.kodelisting-rooms .kodelisting-rooms-image-carousel .tm-swiper-button-next {
+  left: 40px;
+}
+.kodelisting-rooms .kodelisting-rooms-image-carousel .swiper-pagination {
+  position: absolute;
+  bottom: 40px;
+  right: 50%;
+}
+
+.theme-hotelex .daterangepicker {
+  --dropdown-bg: #f8f5f0;
+  --dropdown-color: #000;
+  --dropdown-border: var(--theme-color1);
+  --available-bg: #fff;
+  --active-bg: var(--theme-color1);
+  --active-color: #fff;
+  --inrange-bg: #e5e5e5;
+  --inrange-color: var(--dropdown-color);
+  --disabled-color: #d8d9db;
+  --padding: 8px;
+  --td-border: #d8d9db;
+  --tooltip-bg: #000;
+  --tooltip-color: #fff;
+  --no-check-inout: rgba(0, 0, 0, 0.7);
+  --hover-highlight: var(--theme-color1);
+  background: var(--dropdown-bg);
+  color: var(--dropdown-color);
+  border: 1px solid var(--dropdown-border);
+  border-radius: 0;
+  padding: var(--padding);
+}
+.theme-hotelex .daterangepicker:before, .theme-hotelex .daterangepicker:after {
+  display: none;
+}
+.theme-hotelex .daterangepicker .calendar-table {
+  background: none;
+  border: none;
+}
+.theme-hotelex .daterangepicker .calendar-table table {
+  border: none;
+}
+.theme-hotelex .daterangepicker .calendar-table th,
+.theme-hotelex .daterangepicker .calendar-table td {
+  position: relative;
+  padding: 0;
+  max-width: 100%;
+  height: 36px;
+  border: none;
+  border-radius: 0;
+}
+.theme-hotelex .daterangepicker .calendar-table thead th.month {
+  font-size: 16px;
+  font-size: 1rem;
+}
+.theme-hotelex .daterangepicker .calendar-table tbody td {
+  border: 0.0625rem solid var(--td-border);
+}
+.theme-hotelex .daterangepicker td:hover {
+  z-index: 99;
+}
+.theme-hotelex .daterangepicker td.disabled,
+.theme-hotelex .daterangepicker option.disabled {
+  color: var(--disabled-color) !important;
+  background: none !important;
+}
+.theme-hotelex .daterangepicker td.disabled:before, .theme-hotelex .daterangepicker td.disabled:not(.maximal-stay-unavailable) .day-tooltip,
+.theme-hotelex .daterangepicker option.disabled:before,
+.theme-hotelex .daterangepicker option.disabled:not(.maximal-stay-unavailable) .day-tooltip {
+  display: none !important;
+}
+.theme-hotelex .daterangepicker td.available {
+  background: var(--available-bg);
+}
+.theme-hotelex .daterangepicker td.available:hover {
+  background: var(--available-bg);
+}
+.theme-hotelex .daterangepicker td.no-checkin:not(.off):not(.active):not(.in-range),
+.theme-hotelex .daterangepicker td.no-checkout:not(.off):not(.active):not(.in-range) {
+  color: var(--no-check-inout);
+}
+.theme-hotelex .daterangepicker td.in-range {
+  background: var(--inrange-bg);
+  color: var(--inrange-color);
+}
+.theme-hotelex .daterangepicker td.active {
+  background: var(--active-bg);
+  color: var(--active-color);
+}
+.theme-hotelex .daterangepicker td.active:hover {
+  background: var(--available-bg);
+  color: var(--dropdown-color);
+}
+.theme-hotelex .daterangepicker td.active,
+.theme-hotelex .daterangepicker td.in-range,
+.theme-hotelex .daterangepicker td.available:hover {
+  position: relative;
+}
+.theme-hotelex .daterangepicker td.active:before,
+.theme-hotelex .daterangepicker td.in-range:before,
+.theme-hotelex .daterangepicker td.available:hover:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: -0.0625rem;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  border: 2px solid;
+  box-sizing: border-box;
+  content: "";
+}
+.theme-hotelex .daterangepicker td.in-range:before {
+  border-color: var(--inrange-bg);
+}
+.theme-hotelex .daterangepicker td.in-range.off:before {
+  border-color: transparent;
+}
+.theme-hotelex .daterangepicker td.active:before {
+  border-color: var(--active-bg);
+}
+.theme-hotelex .daterangepicker td.available:hover:before {
+  border-color: var(--hover-highlight);
+}
+.theme-hotelex .daterangepicker td.active.off:not(:hover):before {
+  border-color: transparent;
+}
+.theme-hotelex .daterangepicker th.available:hover {
+  background: none;
+}
+.theme-hotelex .daterangepicker th.prev,
+.theme-hotelex .daterangepicker th.next {
+  position: relative;
+}
+.theme-hotelex .daterangepicker th.prev span,
+.theme-hotelex .daterangepicker th.next span {
+  border-color: var(--dropdown-color);
+}
+.theme-hotelex .daterangepicker th.prev:before, .theme-hotelex .daterangepicker th.prev:after,
+.theme-hotelex .daterangepicker th.next:before,
+.theme-hotelex .daterangepicker th.next:after {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+  -ms-transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
+  margin: 1px 0 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  content: "";
+}
+.theme-hotelex .daterangepicker th.prev:before,
+.theme-hotelex .daterangepicker th.next:before {
+  border: 0.0625rem solid var(--td-border);
+}
+.theme-hotelex .daterangepicker th.prev:after,
+.theme-hotelex .daterangepicker th.next:after {
+  border: 2px solid var(--hover-highlight);
+  opacity: 0;
+}
+.theme-hotelex .daterangepicker th.prev:hover:before,
+.theme-hotelex .daterangepicker th.next:hover:before {
+  opacity: 0;
+}
+.theme-hotelex .daterangepicker th.prev:hover:after,
+.theme-hotelex .daterangepicker th.next:hover:after {
+  opacity: 1;
+}
+.theme-hotelex .daterangepicker th.prev span,
+.theme-hotelex .daterangepicker th.next span {
+  padding: 2px;
+}
+.theme-hotelex .daterangepicker th.prev:before, .theme-hotelex .daterangepicker th.prev:after {
+  margin-right: -1px;
+}
+.theme-hotelex .daterangepicker .day-tooltip {
+  position: absolute;
+  top: 1px;
+  right: 50%;
+  z-index: 999;
+  -webkit-transform: translate(50%, -100%);
+  -ms-transform: translate(50%, -100%);
+  transform: translate(50%, -100%);
+  display: block;
+  width: fit-content;
+  height: auto;
+  padding: 2px 6px;
+  background: var(--tooltip-bg);
+  color: var(--tooltip-color);
+  font-size: 10px;
+  font-size: 0.625rem;
+  border-radius: 2px;
+  pointer-events: none;
+}
+.theme-hotelex .daterangepicker .day-tooltip:after {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: var(--tooltip-bg);
+  content: "";
+  bottom: -2px;
+  right: 50%;
+  -webkit-transform: translateX(50%) rotate(-45deg);
+  -ms-transform: translateX(50%) rotate(-45deg);
+  transform: translateX(50%) rotate(-45deg);
+}

@@ -1,0 +1,63 @@
+/*
+ * Current Theme Style
+ * -----------------------------------------------
+*/
+.gradient-bg-section {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 30px;
+    top: 60px;
+    width: 550px;
+    height: 550px;
+    background: #cef0ff;
+    opacity: 0.3;
+    filter: blur(75px);
+    border-radius: 50%;
+    z-index: -3;
+  }
+  &::after {
+    background: #e4ceff;
+    top: -105px;
+    left: auto;
+    right: 30%;
+  }
+}
+
+.gradient-bg-section2 {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    left: -127px;
+    top: 90px;
+    width: 530px;
+    height: 530px;
+    background: #cc3de3;
+    opacity: 0.05;
+    filter: blur(75px);
+    border-radius: 50%;
+    z-index: -1;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: 80px;
+    width: 530px;
+    height: 530px;
+    background: #5e3de3;
+    opacity: 0.1;
+    filter: blur(75px);
+    z-index: -1;
+  }
+}
+.blur-effect {
+  backdrop-filter: blur(10px);
+}
