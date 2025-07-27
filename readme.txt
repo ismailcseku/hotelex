@@ -2,7 +2,7 @@
 Author: ThemeMascot
 Requires at least: WordPress 6.0
 Tested up to: WordPress 6.7
-Version: 5.0
+Version: 6.2
 License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: full-width-template, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, rtl-language-support, sticky-post, threaded-comments, translation-ready

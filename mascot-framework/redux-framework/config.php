@@ -256,32 +256,6 @@
 				'required' => array( 'logo-settings-switchable-logo', '=', '1' ),
 			),
 
-
-			array(
-				'id'            => 'logo-settings-maximum-logo-width',
-				'type'          => 'slider',
-				'title'         => esc_html__( 'Logo Width(px) - Mobile Memu', 'hotelex' ),
-				'subtitle'      => esc_html__( 'Enter logo width in px.', 'hotelex' ),
-				'desc'          => '',
-				'min'           => 20,
-				'step'          => 1,
-				'max'           => 500,
-				'display_value' => 'text',
-				'required' => array( 'logo-settings-want-to-use-logo', '=', '1' ),
-			),
-			array(
-				'id'            => 'logo-settings-maximum-logo-width-in-sticky-mode',
-				'type'          => 'slider',
-				'title'         => esc_html__( 'Maximum Logo Width(px) in Sticky Mode', 'hotelex' ),
-				'subtitle'      => esc_html__( 'Enter maximum logo width in px in sticky header mode.', 'hotelex' ),
-				'desc'          => '',
-				'min'           => 20,
-				'step'          => 1,
-				'max'           => 250,
-				'display_value' => 'text',
-				'required' => array( 'logo-settings-want-to-use-logo', '=', '1' ),
-			),
-
 			array(
 				'id'            => 'logo-settings-logo-margin-around',
 				'type'     => 'spacing',
@@ -1390,6 +1364,56 @@
 
 	// -> START Header Navigation Row
 	Redux::setSection( $opt_name, array(
+		'title'  => esc_html__( 'Header Mobile', 'hotelex' ),
+		'id'     => 'header-mobile-settings',
+		'desc'   => '',
+		'icon'   => 'dashicons-before dashicons-arrow-up-alt',
+		'subsection' => true,
+		'fields' => array(
+			array(
+				'id'       => 'header-mobile-settings-mobile-nav-bg-color',
+				'type'     => 'color',
+				'title'    => esc_html__( 'Mobile Menu Background Color', 'hotelex' ),
+			),
+			array(
+				'id'       => 'header-mobile-settings-hamburger-line-color',
+				'type'     => 'color',
+				'title'    => esc_html__( 'Hamburger Line Color', 'hotelex' ),
+			),
+			array(
+				'id'       => 'header-mobile-settings-revealed-canvas-bg-color',
+				'type'     => 'color',
+				'title'    => esc_html__( 'Revealed Mobile Canvas Background Color', 'hotelex' ),
+			),
+			array(
+				'id'       => 'header-mobile-settings-item-indicator-arrow-bg-color',
+				'type'     => 'color',
+				'title'    => esc_html__( 'Menu Item Indicator Arrow BG Color', 'hotelex' ),
+			),
+			array(
+				'id'       => 'header-mobile-settings-item-indicator-arrow-color',
+				'type'     => 'color',
+				'title'    => esc_html__( 'Menu Item Indicator Arrow Color', 'hotelex' ),
+			),
+			array(
+				'id'            => 'logo-settings-maximum-logo-width',
+				'type'          => 'slider',
+				'title'         => esc_html__( 'Logo Width(px) in Mobile Memu', 'hotelex' ),
+				'subtitle'      => esc_html__( 'Enter logo width in px.', 'hotelex' ),
+				'desc'          => '',
+				'min'           => 20,
+				'step'          => 1,
+				'max'           => 500,
+				'display_value' => 'text',
+				'required' => array( 'logo-settings-want-to-use-logo', '=', '1' ),
+			),
+		)
+	) );
+
+
+
+	// -> START Header Navigation Row
+	Redux::setSection( $opt_name, array(
 		'title'  => esc_html__( 'Header Sticky', 'hotelex' ),
 		'id'     => 'header-sticky-settings',
 		'desc'   => '',
@@ -1437,6 +1461,18 @@
 				'on'       => esc_html__( 'Yes', 'hotelex' ),
 				'off'      => esc_html__( 'No', 'hotelex' ),
 				'required' => array( 'header-sticky-mobile-enable-on-scroll', '=', '1' ),
+			),
+			array(
+				'id'            => 'logo-settings-maximum-logo-width-in-sticky-mode',
+				'type'          => 'slider',
+				'title'         => esc_html__( 'Maximum Logo Width(px) in Sticky Mode', 'hotelex' ),
+				'subtitle'      => esc_html__( 'Enter maximum logo width in px in sticky header mode.', 'hotelex' ),
+				'desc'          => '',
+				'min'           => 20,
+				'step'          => 1,
+				'max'           => 250,
+				'display_value' => 'text',
+				'required' => array( 'logo-settings-want-to-use-logo', '=', '1' ),
 			),
 		)
 	) );
@@ -3935,6 +3971,15 @@
 				'title'    => esc_html__( 'On Sale Tag Background Color', 'hotelex' ),
 				'subtitle' => esc_html__( 'Select your custom background color for on-sale tag.', 'hotelex' ),
 				'transparent' => true,
+			),
+			array(
+				'id'       => 'shop-single-product-settings-enable-floating-woocart-sidebar',
+				'type'     => 'switch',
+				'title'    => esc_html__( 'Enable Floating Cart Sidebar', 'hotelex' ),
+				'subtitle' => '',
+				'default'  => 0,
+				'on'       => esc_html__( 'Yes', 'hotelex' ),
+				'off'      => esc_html__( 'No', 'hotelex' ),
 			),
 		)
 	) );

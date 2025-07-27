@@ -14,7 +14,16 @@
   --field-space: 12px;
   --form-side-padding: 10px;
 }
-.kodelisting-reservation-form input[type=text], .kodelisting-reservation-form input[type=email], .kodelisting-reservation-form input[type=url], .kodelisting-reservation-form input[type=file], .kodelisting-reservation-form input[type=password], .kodelisting-reservation-form input[type=number], .kodelisting-reservation-form input[type=date], .kodelisting-reservation-form input[type=search], .kodelisting-reservation-form input[type=tel], .kodelisting-reservation-form textarea {
+.kodelisting-reservation-form input[type=text],
+.kodelisting-reservation-form input[type=email],
+.kodelisting-reservation-form input[type=url],
+.kodelisting-reservation-form input[type=file],
+.kodelisting-reservation-form input[type=password],
+.kodelisting-reservation-form input[type=number],
+.kodelisting-reservation-form input[type=date],
+.kodelisting-reservation-form input[type=search],
+.kodelisting-reservation-form input[type=tel],
+.kodelisting-reservation-form textarea {
   width: 100%;
   padding: 5px var(--form-side-padding);
 }

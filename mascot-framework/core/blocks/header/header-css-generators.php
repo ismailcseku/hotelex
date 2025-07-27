@@ -1,6 +1,142 @@
 <?php
 
 
+if (!function_exists('hotelex_get_header_mobile_nav_bg_color_adjust')) {
+	/**
+	 * Generate CSS codes for BG Color of Preloader
+	 */
+	function hotelex_get_header_mobile_nav_bg_color_adjust() {
+		global $hotelex_redux_theme_opt;
+		$var_name = 'header-mobile-settings-mobile-nav-bg-color';
+		$declaration = array();
+		$selector = array(
+			'#elementor-header-top-mobile',
+		);
+
+		//if empty then return
+		if( !array_key_exists( $var_name, $hotelex_redux_theme_opt ) ) {
+			return;
+		}
+
+		if( $hotelex_redux_theme_opt[$var_name] == '' ) {
+			return;
+		}
+
+		$declaration['background-color'] = $hotelex_redux_theme_opt[$var_name];
+		hotelex_dynamic_css_generator($selector, $declaration);
+	}
+	add_action('hotelex_dynamic_css_generator_action', 'hotelex_get_header_mobile_nav_bg_color_adjust');
+}
+
+if (!function_exists('hotelex_get_header_mobile_hamburger_color_adjust')) {
+	/**
+	 * Generate CSS codes for BG Color of Preloader
+	 */
+	function hotelex_get_header_mobile_hamburger_color_adjust() {
+		global $hotelex_redux_theme_opt;
+		$var_name = 'header-mobile-settings-hamburger-line-color';
+		$declaration = array();
+		$selector = array(
+			'.tm-nav-mobile-button:before, .tm-nav-mobile-button:after, .tm-nav-mobile-button span',
+		);
+
+		//if empty then return
+		if( !array_key_exists( $var_name, $hotelex_redux_theme_opt ) ) {
+			return;
+		}
+
+		if( $hotelex_redux_theme_opt[$var_name] == '' ) {
+			return;
+		}
+
+		$declaration['background-color'] = $hotelex_redux_theme_opt[$var_name];
+		hotelex_dynamic_css_generator($selector, $declaration);
+	}
+	add_action('hotelex_dynamic_css_generator_action', 'hotelex_get_header_mobile_hamburger_color_adjust');
+}
+
+if (!function_exists('hotelex_get_header_mobile_revealed_canvas_bg_color_adjust')) {
+	/**
+	 * Generate CSS codes for BG Color of Preloader
+	 */
+	function hotelex_get_header_mobile_revealed_canvas_bg_color_adjust() {
+		global $hotelex_redux_theme_opt;
+		$var_name = 'header-mobile-settings-revealed-canvas-bg-color';
+		$declaration = array();
+		$selector = array(
+			'.tm-header-menu',
+		);
+
+		//if empty then return
+		if( !array_key_exists( $var_name, $hotelex_redux_theme_opt ) ) {
+			return;
+		}
+
+		if( $hotelex_redux_theme_opt[$var_name] == '' ) {
+			return;
+		}
+
+		$declaration['background-color'] = $hotelex_redux_theme_opt[$var_name];
+		hotelex_dynamic_css_generator($selector, $declaration);
+	}
+	add_action('hotelex_dynamic_css_generator_action', 'hotelex_get_header_mobile_revealed_canvas_bg_color_adjust');
+}
+
+if (!function_exists('hotelex_get_header_mobile_menu_item_indicator_bg_color_adjust')) {
+	/**
+	 * Generate CSS codes for BG Color of Preloader
+	 */
+	function hotelex_get_header_mobile_menu_item_indicator_bg_color_adjust() {
+		global $hotelex_redux_theme_opt;
+		$var_name = 'header-mobile-settings-item-indicator-arrow-bg-color';
+		$declaration = array();
+		$selector = array(
+			'.menuzord-responsive .menuzord-menu li .indicator',
+		);
+
+		//if empty then return
+		if( !array_key_exists( $var_name, $hotelex_redux_theme_opt ) ) {
+			return;
+		}
+
+		if( $hotelex_redux_theme_opt[$var_name] == '' ) {
+			return;
+		}
+
+		$declaration['background-color'] = $hotelex_redux_theme_opt[$var_name];
+		hotelex_dynamic_css_generator($selector, $declaration);
+	}
+	add_action('hotelex_dynamic_css_generator_action', 'hotelex_get_header_mobile_menu_item_indicator_bg_color_adjust');
+}
+
+if (!function_exists('hotelex_get_header_mobile_menu_item_indicator_color_adjust')) {
+	/**
+	 * Generate CSS codes for BG Color of Preloader
+	 */
+	function hotelex_get_header_mobile_menu_item_indicator_color_adjust() {
+		global $hotelex_redux_theme_opt;
+		$var_name = 'header-mobile-settings-item-indicator-arrow-color';
+		$declaration = array();
+		$selector = array(
+			'.menuzord-responsive .menuzord-menu li .indicator',
+		);
+
+		//if empty then return
+		if( !array_key_exists( $var_name, $hotelex_redux_theme_opt ) ) {
+			return;
+		}
+
+		if( $hotelex_redux_theme_opt[$var_name] == '' ) {
+			return;
+		}
+
+		$declaration['color'] = $hotelex_redux_theme_opt[$var_name];
+		hotelex_dynamic_css_generator($selector, $declaration);
+	}
+	add_action('hotelex_dynamic_css_generator_action', 'hotelex_get_header_mobile_menu_item_indicator_color_adjust');
+}
+
+
 if (!function_exists('hotelex_get_header_top_cpt_elementor_wpb_shortcodes_custom_css')) {
 	/**
 	 * Add VC inline css to body

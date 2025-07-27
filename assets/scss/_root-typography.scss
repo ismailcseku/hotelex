@@ -65,12 +65,15 @@
   --news-widget-archive-icon-color: var(--theme-color1);
 
   //mobile responsive nav styling
-  --mobile-menu-item-link-text-color: #111;
-  --mobile-menu-item-link-bg-color: #fff;
-  --mobile-menu-item-link-bg-border-color: #f1f1f1;
+  --mobile-menu-bg-color: var(--theme-color-white);
+  --mobile-menu-hamburger-color: var(--theme-color-dark);
+
+  --mobile-menu-item-link-text-color: var(--theme-color-dark);
+  --mobile-menu-item-link-bg-color: transparent;
+  --mobile-menu-item-link-bg-border-color: rgba(241, 241, 241, 0.24);
   --mobile-menu-item-link-text-color-hover: #111;
   --mobile-menu-item-indicator-bg-color: var(--theme-color2);
-  --mobile-menu-item-indicator-text-color: var(--text-color-bg-theme-color2);
+  --mobile-menu-item-indicator-text-color: var(--theme-color2-text-color);
 
   //menu-unit-test.scss
   --menuzord-primary-nav-font-size: 14px;

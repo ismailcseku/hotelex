@@ -1705,7 +1705,8 @@ if ( ! function_exists( 'hotelex_tribe_events_frontend_scripts_responsive' ) ) {
 
 // header_nav_search_icon_popup_html
 if ( ! function_exists( 'hotelex_header_nav_search_icon_popup_html' ) ) {
-	function hotelex_header_nav_search_icon_popup_html( $nav_search_holder_id ) {
+	function hotelex_header_nav_search_icon_popup_html() {
+		global $nav_search_holder_id;
 		if( isset($nav_search_holder_id) && is_array($nav_search_holder_id) ) {
 			foreach ($nav_search_holder_id as $holder_id) {
 	?>
@@ -1727,7 +1728,7 @@ if ( ! function_exists( 'hotelex_header_nav_search_icon_popup_html' ) ) {
 		}
 	}
 }
-add_action('hotelex_nav_search_icon_popup_html', 'hotelex_header_nav_search_icon_popup_html', 10, 1);
+add_action('hotelex_nav_search_icon_popup_html', 'hotelex_header_nav_search_icon_popup_html');
 
 
 

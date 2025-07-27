@@ -410,9 +410,6 @@ class Hotelex_Walker_Nav_Menu_Edit_Custom extends Walker_Nav_Menu  {
 						</select>
 					</label>
 				</p>
-				<script>
-					jQuery('.mascot-menuicon-picker').fontIconPicker();
-				</script>
 				<p class="field-custom description description-wide">
 					<label for="edit-menu-item-mascot-custombadge-<?php echo esc_attr( $item_id ); ?>">
 					<?php esc_html_e( 'Custom Badge/Tag', 'hotelex' ); ?>

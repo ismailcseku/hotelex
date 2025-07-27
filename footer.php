@@ -54,8 +54,8 @@
 	 * nav_search_icon_popup_html hook.
 	 *
 	 */
-	global $nav_search_holder_id;
-	do_action( 'hotelex_nav_search_icon_popup_html', $nav_search_holder_id );
+	do_action( 'hotelex_nav_search_icon_popup_html');
+	hotelex_floating_cart_sidebar();
 ?>
 <?php wp_footer(); ?>
 </body>

@@ -208,7 +208,7 @@ if (!function_exists('hotelex_woocommerce_product_per_page_select')) {
 			foreach( $orderby_options as $value => $label ) {
 				if( !empty($value) ) {
 					?>
-					<option <?php echo esc_attr( selected( $per_page, $value ) ) ?> value='?perpage=<?php echo esc_attr( $value ) ?>'><?php echo esc_attr( $label ) ?></option>
+					<option <?php echo esc_attr( selected( $per_page, $value ) ) ?> value='?perpage=<?php echo esc_attr( $value ) ?>'><?php echo esc_html( $label ) ?></option>
 					<?php
 				}
 			}
@@ -697,6 +697,11 @@ add_filter( 'loop_shop_per_page', 'hotelex_woocommerce_products_per_page' );
  */
 if ( ! function_exists( 'hotelex_floating_cart_sidebar' ) ) {
 function hotelex_floating_cart_sidebar() {
+	$floating_woocart_sidebar = hotelex_get_redux_option( 'shop-single-product-settings-enable-floating-woocart-sidebar', false );
+	if( !$floating_woocart_sidebar ) {
+		return;
+	}
+
 	?>
 	<?php if(class_exists('Woocommerce')) : ?>
 		<div class="tm-floating-woocart-wrapper woocommerce">
@@ -724,44 +729,27 @@ function hotelex_floating_cart_sidebar() {
 add_action('wp_ajax_nopriv_wc_item_added_signal', 'hotelex_addedtocart_item_added_signal');
 add_action('wp_ajax_wc_item_added_signal', 'hotelex_addedtocart_item_added_signal');
 function hotelex_addedtocart_item_added_signal() {
-	check_ajax_referer('tm-woo-added-signal');
+	check_ajax_referer('tm_woo_added_signal');
 	echo isset($_POST['id']) && $_POST['id'] > 0 ? (int) esc_attr(sanitize_text_field($_POST['id'])) : false;
 	die();
 }
-add_action('wp_footer', 'hotelex_product_item_added_signal_check');
 function hotelex_product_item_added_signal_check() {
 	if (class_exists('Woocommerce') && is_checkout()){
 		return;
 	}
-	$nonce =  wp_create_nonce ('tm-woo-added-signal');
-	?>
-	<script type="text/javascript">
-		jQuery( function($) {
-			if ( typeof wc_add_to_cart_params === 'undefined' )
-				return false;
-
-			$(document.body).on( 'added_to_cart', function( event, fragments, cart_hash, $button ) {
-				var $pid = $button.data('product_id');
-
-				$.ajax({
-					type: 'POST',
-					url: wc_add_to_cart_params.ajax_url,
-					data: {
-						'action': 'wc_item_added_signal',
-						'_wpnonce': '<?php echo esc_html($nonce); ?>',
-						'id'    : $pid
-					},
-					success: function (response) {
-						$('.tm-floating-woocart-wrapper').addClass('open');
-					}
-				});
-			});
-		});
-	</script>
-	<?php
+	// Enqueue your external JavaScript file
+	wp_enqueue_script( 'my-external-script', HOTELEX_TEMPLATE_URI . '/assets/js/custom-woo.js', array('jquery'), false, true );
+	// Prepare the data you want to pass
+	$data_to_pass = array(
+			'myValue' => 'Hello, World!',
+	);
+	$nonce_array = array(
+			'my_nonce' => wp_create_nonce('tm_woo_added_signal')
+	);
+	// Localize the script with the data
+	wp_localize_script('my-external-script', 'myData', $nonce_array);
 }
-
-
+add_action('wp_enqueue_scripts', 'hotelex_product_item_added_signal_check');
 
 /**
  * Disable scrolling on quick view enabled

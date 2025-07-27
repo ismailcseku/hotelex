@@ -55,7 +55,10 @@
   #elementor-header-top-mobile {
     position: relative;
     @include box-shadow(0 0px 15px rgba(0, 0, 0, 0.08));
-    background-color: #fff;
+    [data-tm-layout="dark"] & {
+      @include box-shadow(0 0px 15px rgba(255, 255, 255, 0.18));
+    }
+    background-color: var(--mobile-menu-bg-color);
     .tm-header-main {
       position: relative;
     }
@@ -90,7 +93,7 @@
     &:after,
     span {
       content: "";
-      background-color: #1b1b1b;
+      background-color: var(--mobile-menu-hamburger-color);
       height: 2px;
       position: absolute;
       left: 0;
