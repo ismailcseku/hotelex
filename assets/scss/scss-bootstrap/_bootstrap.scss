@@ -25,6 +25,7 @@
 @import "transitions";
 @import "alert";
 @import "close";
+@import "nav";
 
 // Helpers
 @import "helpers";
@@ -61,7 +62,8 @@ $utilities: map-get-multiple(
     "padding-start",
     "gap",
     "row-gap",
-    "column-gap"
+    "column-gap",
+    "overflow"
   )
 );
 

@@ -205,6 +205,18 @@ class HotelexOneClickImport {
 		hotelex_generate_dynamic_css();
 		hotelex_generate_css_for_custom_theme_color_from_scss();
 
+		if ( class_exists( '\Elementor\Plugin' ) ) {
+			\Elementor\Plugin::instance()->files_manager->clear_cache();
+		}
+
+		add_action( 'plugins_loaded', function() {
+			add_filter( 'elementor/stable_features/default_active', function( $features ) {
+				$features['e_container'] = true;         // Force Container active
+				$features['e_font_icon_svg'] = false;    // Force Inline Font Icons inactive
+				return $features;
+			});
+		});
+
 		//rev slider import process
 		if($this->import_sliders) {
 			// step 1: flip array key => value

@@ -146,7 +146,7 @@
     @include transform(translateX(-100%));
     visibility: hidden;
     @include box-shadow(0 0 15px rgba(0, 0, 0, 0.08));
-    background-color: #fff;
+    background-color: var(--theme-color-white);
     overflow-y: scroll;
     &.active {
       visibility: visible;
