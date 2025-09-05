@@ -1,4 +1,28 @@
 /*
- * header-other.scss
+ * header-common.scss
  * -----------------------------------------------
 */
+body.switchable-logo {
+  header#header {
+    .menuzord-brand {
+      .logo-primary {
+        display: inline-block;
+      }
+      .logo-on-sticky {
+        display: none;
+      }
+    }
+    #elementor-header-top-sticky {
+      &.visible {
+        .menuzord-brand {
+          .logo-primary {
+            display: none;
+          }
+          .logo-on-sticky {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
