@@ -9,7 +9,7 @@
 
 						<h1 class="title"><?php echo esc_html( $page_title );?></h1>
 						<h3 class="sub-title"><?php echo esc_html( $page_subtitle );?></h3>
-						<div class="content"><?php echo wpautop( do_shortcode( esc_html( $page_content ) ) ); ?></div>
+						<div class="content"><?php echo wp_kses_post( wpautop( do_shortcode( $page_content ) ) ); ?></div>
 						<?php
 							if( $show_back_to_home_button ) {
 								hotelex_get_blocks_template_part( 'back-to-home-button', null, '404/tpl', $params );

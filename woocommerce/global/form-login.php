@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Login form
  *
@@ -28,7 +28,7 @@ if ( is_user_logged_in() ) {
 
 	<?php do_action( 'woocommerce_login_form_start' ); ?>
 
-	<?php $message_output = ( $message ) ? wpautop( wptexturize( $message ) ) : ''; echo esc_html($message_output); // @codingStandardsIgnoreLine ?>
+	<?php $message_output = ( $message ) ? wpautop( wptexturize( $message ) ) : ''; echo wp_kses_post($message_output); ?>
 
 	<p class="form-row form-row-first">
 		<label for="username"><?php esc_html_e( 'Username or email', 'hotelex' ); ?>&nbsp;<span class="required" aria-hidden="true">*</span><span class="screen-reader-text"><?php esc_html_e( 'Required', 'hotelex' ); ?></span></label>

@@ -492,6 +492,14 @@ if(!function_exists('hotelex_get_header_logo')) {
 				$params['use_switchable_logo'] = hotelex_get_redux_option( 'logo-settings-switchable-logo' );
 			}
 
+			//logo mobile version
+			$temp_meta_value = hotelex_get_rwmb_group_advanced( 'hotelex_' . 'page_mb_logo_settings', 'logo_mobile_version', $current_page_id );
+			if( ! hotelex_metabox_opt_val_is_empty( $temp_meta_value ) ) {
+				$params['logo_mobile_version'] = $temp_meta_value;
+			} else {
+				$params['logo_mobile_version'] = esc_url( hotelex_get_redux_option( 'logo-settings-logo-mobile-version', false, 'url' ) );
+			}
+
 
 
 			if( $params['use_switchable_logo'] ) {

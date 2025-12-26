@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Single Product Up-Sells
  *

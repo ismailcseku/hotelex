@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Display single product reviews (comments)
  *

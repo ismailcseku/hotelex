@@ -26,7 +26,7 @@ if ( !mascot_core_hotelex_plugin_installed() ) {
 			if( $link_id == $_REQUEST[ 'page' ] ) $active = ' nav-tab-active';
 		}
 	?>
-			<a href="<?php echo "admin.php?page={$link_id}"; ?>" class="nav-tab<?php echo esc_attr( $active ) ?>"><?php echo esc_html( $title ); ?></a>
+			<a href="<?php echo esc_url( "admin.php?page={$link_id}" ); ?>" class="nav-tab<?php echo esc_attr( $active ) ?>"><?php echo esc_html( $title ); ?></a>
 	<?php
 		}
 	?>

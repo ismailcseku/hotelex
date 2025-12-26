@@ -457,7 +457,7 @@ if ( ! function_exists( 'hotelex_get_blog_single_custom_password_form' ) ) {
 		$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
 		$o = '<form class="post-password-form" action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
 			<p>' . esc_html__( "This content is password protected. To view it please enter your password below:", 'hotelex' ) . '<p>
-			<label for="' . esc_html( $label ) . '">' . esc_html__( "Password:", 'hotelex' ) . ' <input class="form-control mb-0" name="post_password" id="' . esc_html( $label ) . '" type="password" size="20" maxlength="20" /> </label> <input class="btn btn-theme-colored1 btn-default" type="submit" name="Submit" value="' . esc_attr__( "Submit", 'hotelex' ) . '" />
+			<label for="' . esc_attr( $label ) . '">' . esc_html__( "Password:", 'hotelex' ) . ' <input class="form-control mb-0" name="post_password" id="' . esc_attr( $label ) . '" type="password" size="20" maxlength="20" /> </label> <input class="btn btn-theme-colored1 btn-default" type="submit" name="Submit" value="' . esc_attr__( "Submit", 'hotelex' ) . '" />
 		</form>
 		';
 		return $o;

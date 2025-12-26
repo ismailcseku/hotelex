@@ -132,7 +132,7 @@
     opacity: 0;
     visibility: hidden;
   }
-  .tm-header-menu {
+  body:not(.elementor-editor-active) .tm-header-menu {
     position: fixed;
     height: 100vh;
     width: 350px;

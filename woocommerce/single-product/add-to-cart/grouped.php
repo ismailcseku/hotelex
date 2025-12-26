@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Grouped product add to cart
  *
@@ -12,7 +12,7 @@
  *
  * @see     https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 9.8.0
+ * @version 10.2.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -68,7 +68,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 								if ( $grouped_product_child->is_on_sale() ) {
 									printf(
 										/* translators: %1$s: Product name. %2$s: Sale price. %3$s: Regular price */
-										esc_html__( 'Buy one of %1$s on sale for %2$s, original price was %3$s', 'woocommerce' ),
+										esc_html__( 'Buy one of %1$s on sale for %2$s, original price was %3$s', 'hotelex' ),
 										esc_html( $grouped_product_child->get_name() ),
 										esc_html( wp_strip_all_tags( wc_price( $grouped_product_child->get_price() ) ) ),
 										esc_html( wp_strip_all_tags( wc_price( $grouped_product_child->get_regular_price() ) ) )
@@ -76,7 +76,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 								} else {
 									printf(
 										/* translators: %1$s: Product name. %2$s: Product price */
-										esc_html__( 'Buy one of %1$s for %2$s', 'woocommerce' ),
+										esc_html__( 'Buy one of %1$s for %2$s', 'hotelex' ),
 										esc_html( $grouped_product_child->get_name() ),
 										esc_html( wp_strip_all_tags( wc_price( $grouped_product_child->get_price() ) ) )
 									);
@@ -135,7 +135,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
 		<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
-		<button type="submit" class="single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+		<button type="submit" class="single_add_to_cart_button button alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
 
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 

@@ -689,6 +689,13 @@ function hotelex_page_metaboxes( $meta_boxes ) {
 						'max_status'=> false,
 						'visible'   => array( 'use_logo', '!=', '0' ),
 					),
+					array(
+						'name'		=> esc_html__( 'Logo for Mobile Version', 'hotelex' ),
+						'id'		=> 'logo_mobile_version',
+						'type'		=> 'image_advanced',
+						'max_file_uploads' => 1,
+						'max_status'=> false,
+					),
 
 					// DIVIDER
 					array(
@@ -745,7 +752,7 @@ function hotelex_page_metaboxes( $meta_boxes ) {
 						'std'		=> 40,
 						'visible'   => array( 'use_logo', '!=', '0' ),
 					),
-				),
+),
 			),
 			//Logo tab ends
 

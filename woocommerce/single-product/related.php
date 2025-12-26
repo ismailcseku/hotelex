@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Related Products
  *
@@ -12,7 +12,7 @@
  *
  * @see         https://woocommerce.com/document/template-structure/
  * @package     WooCommerce\Templates
- * @version     9.6.0
+ * @version     10.3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -30,7 +30,7 @@ if ( $related_products ) : ?>
 	<section class="related products">
 
 		<?php
-		$heading = apply_filters( 'woocommerce_product_related_products_heading', esc_html__( 'Related products', 'hotelex' ) );
+		$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Related products', 'hotelex' ) );
 
 		if ( $heading ) :
 			?>

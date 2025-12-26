@@ -1,6 +1,6 @@
 <?php
-use MASCOTCOREHOTELEX\CPT\Portfolio\CPT_Portfolio;
-use MASCOTCOREHOTELEX\CPT\Staff\CPT_Staff;
+use MascotCoreHotelex\CPT\Portfolio\CPT_Portfolio;
+use MascotCoreHotelex\CPT\Staff\CPT_Staff;
 /*
 *
 *	Core Functions
@@ -962,7 +962,7 @@ if(!function_exists('hotelex_posts_per_page_for_different_post_types')) {
 	function hotelex_posts_per_page_for_different_post_types( $query ) {
 		if ( !is_admin() && $query->is_main_query() ) {
 
-			if( class_exists('MASCOTCOREHOTELEX\CPT\Portfolio\CPT_Portfolio') ) {
+			if( class_exists('MascotCoreHotelex\CPT\Portfolio\CPT_Portfolio') ) {
 				//Post Type: Portfolio
 				$portfolio_cpt_class = CPT_Portfolio::Instance();
 				if( is_post_type_archive( $portfolio_cpt_class->ptKey ) || is_tax( $portfolio_cpt_class->ptTaxKey ) || is_tax( $portfolio_cpt_class->ptTagTaxKey ) ) {
@@ -971,7 +971,7 @@ if(!function_exists('hotelex_posts_per_page_for_different_post_types')) {
 				}
 			}
 
-			if( class_exists('MASCOTCOREHOTELEX\CPT\Staff\CPT_Staff') ) {
+			if( class_exists('MascotCoreHotelex\CPT\Staff\CPT_Staff') ) {
 				//Post Type: Staff
 				$staff_cpt_class = CPT_Staff::Instance();
 				if( is_post_type_archive( $staff_cpt_class->ptKey ) || is_tax( $staff_cpt_class->ptTaxKey ) ) {

@@ -257,6 +257,17 @@
 			),
 
 			array(
+				'id'       => 'logo-settings-logo-mobile-version',
+				'type'     => 'media',
+				'url'      => false,
+				'title'    => esc_html__( 'Logo for Mobile Version', 'hotelex' ),
+				'subtitle' => esc_html__( 'Upload/choose your custom logo image', 'hotelex' ),
+				'compiler' => 'true',
+				'desc'     => '',
+				'default'  => array( 'url' => HOTELEX_ASSETS_URI . '/images/logo/logo-wide-white.png' ),
+			),
+
+			array(
 				'id'            => 'logo-settings-logo-margin-around',
 				'type'     => 'spacing',
 				// An array of CSS selectors to apply this font style to
@@ -1404,6 +1415,7 @@
 				'min'           => 20,
 				'step'          => 1,
 				'max'           => 500,
+				'default'       => 120,
 				'display_value' => 'text',
 				'required' => array( 'logo-settings-want-to-use-logo', '=', '1' ),
 			),

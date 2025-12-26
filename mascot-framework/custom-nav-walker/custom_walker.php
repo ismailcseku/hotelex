@@ -149,9 +149,9 @@ class Mascot_Theme_Nav_Walker extends Walker_Nav_Menu {
 		} else if ( strcasecmp( $item->title, 'divider') == 0 && $depth === 1 ) {
 			$output .= $indent . '<li role="presentation" class="divider">';
 		} else if ( strcasecmp( $item->attr_title, 'dropdown-header') == 0 && $depth === 1 ) {
-			$output .= $indent . '<li role="presentation" class="dropdown-header">' . esc_attr( $item->title );
+			$output .= $indent . '<li role="presentation" class="dropdown-header">' . esc_html( $item->title );
 		} else if ( strcasecmp($item->attr_title, 'disabled' ) == 0 ) {
-			$output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
+			$output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_html( $item->title ) . '</a>';
 		} else {
 
 			$class_names = $value = '';
@@ -250,7 +250,7 @@ class Mascot_Theme_Nav_Walker extends Walker_Nav_Menu {
 
 			//Custom Badge/Tag
 			if ( ! empty( $this->mascot_custombadge ) ) {
-				$item_output .= '<span class="tm-menu-badge">' . esc_attr( $this->mascot_custombadge ) . '</span>';
+				$item_output .= '<span class="tm-menu-badge">' . esc_html( $this->mascot_custombadge ) . '</span>';
 			}
 
 			//added by smile for fixing menuzord indicator

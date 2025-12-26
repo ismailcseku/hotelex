@@ -226,8 +226,7 @@ if(!function_exists('hotelex_add_theme_page')) {
 	 * Add Theme Page
 	 */
 	function hotelex_add_theme_page() {
-		global $hotelex_theme_info;
-		$theme_name = $hotelex_theme_info->get('Name');
+		$theme_name = HotelexThemeInfo::get_instance()->get_name();
 		add_menu_page(
 			$theme_name,
 			$theme_name,

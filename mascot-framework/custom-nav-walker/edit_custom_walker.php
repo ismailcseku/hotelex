@@ -454,7 +454,7 @@ class Hotelex_Walker_Nav_Menu_Edit_Custom extends Walker_Nav_Menu  {
 						<p class="link-to-original">
 							<?php
 							/* translators: %s: Link to menu item's original object. */
-							printf( __( 'Original: %s', 'hotelex' ), '<a href="' . esc_attr( $menu_item->url ) . '">' . esc_html( $original_title ) . '</a>' );
+							printf( __( 'Original: %s', 'hotelex' ), '<a href="' . esc_url( $menu_item->url ) . '">' . esc_html( $original_title ) . '</a>' );
 							?>
 						</p>
 					<?php endif; ?>

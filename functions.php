@@ -22,9 +22,6 @@
  *
  */
 
-global $hotelex_theme_info;
-$hotelex_theme_info = wp_get_theme();
-
 if (!function_exists('mascot_core_hotelex_plugin_installed')) {
 	/**
 	 * Core Plugin installed?*/
@@ -50,10 +47,12 @@ define( 'HOTELEX_ADMIN_ASSETS_DIR', HOTELEX_TEMPLATE_DIR . '/admin/assets' );
 define( 'HOTELEX_FRAMEWORK_FOLDER', 'mascot-framework' );
 define( 'HOTELEX_FRAMEWORK_DIR', HOTELEX_TEMPLATE_DIR . '/'. HOTELEX_FRAMEWORK_FOLDER );
 
-define( 'HOTELEX_THEME_VERSION', $hotelex_theme_info->get( 'Version' ) );
 define( 'HOTELEX_POST_EXCERPT_LENGTH', 25 );
 define( 'HOTELEX_MENUZORD_MEGAMENU_BREAKPOINT_BW', '1024px' );
 define( 'HOTELEX_MENUZORD_MEGAMENU_BREAKPOINT_FW', '1025px' );
+
+get_template_part( HOTELEX_FRAMEWORK_FOLDER . '/mascot-theme-info' );
+define( 'HOTELEX_THEME_VERSION', HotelexThemeInfo::get_instance()->get_version() );
 
 
 /* Initial Actions
@@ -181,6 +180,8 @@ if(!function_exists('hotelex_action_wp_enqueue_scripts')) {
 			wp_enqueue_style( 'font-awesome-4-shim', HOTELEX_TEMPLATE_URI . '/assets/css/font-awesome-v4-shims.css' );
 			//linear icons
 			wp_enqueue_style( 'font-linear-icons', HOTELEX_TEMPLATE_URI . '/assets/fonts/linear-icons/style.css' );
+			//flaticon arrow
+			wp_enqueue_style( 'flaticon-arrow', HOTELEX_TEMPLATE_URI . '/assets/fonts/flaticon-arrow/style.css' );
 
 
 

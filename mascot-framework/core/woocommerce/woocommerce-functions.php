@@ -730,7 +730,7 @@ add_action('wp_ajax_nopriv_wc_item_added_signal', 'hotelex_addedtocart_item_adde
 add_action('wp_ajax_wc_item_added_signal', 'hotelex_addedtocart_item_added_signal');
 function hotelex_addedtocart_item_added_signal() {
 	check_ajax_referer('tm_woo_added_signal');
-	echo isset($_POST['id']) && $_POST['id'] > 0 ? (int) esc_attr(sanitize_text_field($_POST['id'])) : false;
+	echo isset($_POST['id']) && $_POST['id'] > 0 ? absint($_POST['id']) : false;
 	die();
 }
 function hotelex_product_item_added_signal_check() {
@@ -809,7 +809,7 @@ if (!function_exists('hotelex_woocommerce_time_sale')) {
             ?>
             <div class="time-sale">
                 <div class="deal-text"><span><?php echo esc_html__('Ends in: ', 'hotelex'); ?></span></div>
-                <div class="hotelex-countdown" data-countdown="true" data-date="<?php echo esc_html($time_sale); ?>">
+                <div class="hotelex-countdown" data-countdown="true" data-date="<?php echo esc_attr($time_sale); ?>">
                     <div class="countdown-item">
                         <span class="countdown-digits countdown-days"></span>
                         <span class="countdown-label"><?php echo esc_html__('d', 'hotelex') ?></span>
@@ -850,7 +850,7 @@ if (!function_exists('hotelex_woocommerce_time_sale_layout_2')) {
             $time_sale += (get_option('gmt_offset') * HOUR_IN_SECONDS);
             ?>
             <div class="time-sale">
-                <div class="hotelex-countdown" data-countdown="true" data-date="<?php echo esc_html($time_sale); ?>">
+                <div class="hotelex-countdown" data-countdown="true" data-date="<?php echo esc_attr($time_sale); ?>">
                     <div class="countdown-item">
                         <span class="countdown-digits countdown-days"></span>
                         <span class="countdown-label"><?php echo esc_html__('Days', 'hotelex') ?></span>
